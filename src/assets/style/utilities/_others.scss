@@ -11,9 +11,9 @@
         background-color: $light-gray;
     }
 
-    // &-pattern {
-    //     background: url('../images/azuki-pattern.svg');
-    // }
+    &-pattern {
+        background: url('/./images/azuki-pattern.svg');
+    }
 
     &-gradient {
         background: linear-gradient(180deg, $light-gray 0%, $white 100%);

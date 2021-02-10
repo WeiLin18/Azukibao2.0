@@ -26,9 +26,9 @@ const ConceptSection = () => {
       <h2 class="section__title">品牌特色</h2>
       <div class="container bg-light-gray py-16 py-2l-10">
         <ul class="concepts__list">
-          {concepts.map(concept => {
+          {concepts.map((concept, index) => {
             return (
-              <li class="concept">
+              <li class="concept" key={index}>
                 <div class="concept__pic">
                   <img src={concept.img} alt="illust-time" />
                 </div>

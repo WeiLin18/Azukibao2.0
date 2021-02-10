@@ -12,9 +12,10 @@ import InstagramFooter from "./pages/layout/InstagramFooter";
 import Footer from "./pages/layout/Footer";
 import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
-import UserListPage from "./pages/user/UserListPage";
-import UserProfilePage from "./pages/user/UserProfilePage";
+// import UserListPage from "./pages/user/UserListPage";
+// import UserProfilePage from "./pages/user/UserProfilePage";
 import BrandPage from "./pages/BrandPage";
+import HomePage from "./pages/HomePage";
 import "./assets/style/all.scss";
 // reach router
 export default function App() {
@@ -62,23 +63,23 @@ export default function App() {
         <main>
           <Switch>
             <Route exact path="/">
-              <h2>homepage</h2>
+              <HomePage />
               {/* <Redirect from="/" to="/users" /> */}
             </Route>
-            <Route path="/users" exact>
+            {/* <Route path="/users" exact>
               <UserListPage />
-            </Route>
+            </Route> */}
             <Route path="/brand" exact>
               <BrandPage />
             </Route>
-            <Route path="/users/:userId">
+            {/* <Route path="/users/:userId">
               <UserProfilePage
                 ondelete={handleClearLogin}
                 loginUserState={loginState}
                 loginUserInfo={loginInfo}
                 onupdateUserName={handleUserInfo}
               />
-            </Route>
+            </Route> */}
             <Route path="/login">
               <LoginPage
                 onLogin={handleLogin}
