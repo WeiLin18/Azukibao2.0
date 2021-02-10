@@ -8,6 +8,7 @@ import {
   useHistory
 } from "react-router-dom";
 import Header from "./pages/layout/Header";
+import InstagramFooter from "./pages/layout/InstagramFooter";
 import Footer from "./pages/layout/Footer";
 import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
@@ -58,15 +59,17 @@ export default function App() {
     <BrowserRouter>
       <ChakraProvider>
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
-        <BrandPage />
-        <Box as="main" p="10">
+        <main>
           <Switch>
             <Route exact path="/">
               <h2>homepage</h2>
-              <Redirect from="/" to="/users" />
+              {/* <Redirect from="/" to="/users" /> */}
             </Route>
             <Route path="/users" exact>
               <UserListPage />
+            </Route>
+            <Route path="/brand" exact>
+              <BrandPage />
             </Route>
             <Route path="/users/:userId">
               <UserProfilePage
@@ -89,8 +92,9 @@ export default function App() {
               />
             </Route>
           </Switch>
-        </Box>
-        <Footer/>
+          <InstagramFooter />
+        </main>
+        <Footer />
       </ChakraProvider>
     </BrowserRouter>
   );
