@@ -1,0 +1,53 @@
+.half__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    & ~ .half__item {
+        margin-top: 20px;
+    }
+
+    &__img{
+        @include notebook{
+            width: 100px;
+            height: 100px;
+        }
+
+        @include pad{
+            width: 80px;
+            height: 80px;
+        }
+
+        @include mobile-lg{
+            width: auto;
+            height: auto;
+        }
+
+        @include mobile-sm{
+            width: 60px;
+            height: 60px;
+            margin-right: 12px;
+        }
+        @include mobile-xs{
+            display: none;
+        }
+    }
+    // @include before(12px, 12px) {
+    //     background-color: #B4B4B4;
+    //     border-radius: 50%;
+    //     position: absolute;
+    //     top: 50%;
+    //     left: -20px;
+    //     transform: translateY(-50%);
+    // }
+
+    // @include after(200px, 1px) {
+    //     background-color: #B4B4B4;
+    //     position: absolute;
+    //     top: 50%;
+    //     left: -220px;
+    //     transform: translateY(-50%);
+    // }
+    // @include 
+
+}

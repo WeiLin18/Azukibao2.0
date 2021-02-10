@@ -1,0 +1,36 @@
+.bg {
+    &-primary {
+        background-color: $primary;
+    }
+
+    &-white {
+        background-color: $white;
+    }
+
+    &-light-gray {
+        background-color: $light-gray;
+    }
+
+    // &-pattern {
+    //     background: url('../images/azuki-pattern.svg');
+    // }
+
+    &-gradient {
+        background: linear-gradient(180deg, $light-gray 0%, $white 100%);
+    }
+
+    &-shoadow {
+        box-shadow: 4px 8px 16px rgba(180, 180, 180, 0.08);
+    }
+}
+
+@include mobile-sm {
+    .bg-sm-white {
+        background: #fff;
+    }
+}
+
+
+.overflow-hidden {
+    overflow: hidden;
+}

@@ -1,0 +1,10 @@
+<svg id="bao2" xmlns="http://www.w3.org/2000/svg" width="30" height="26.923" viewBox="0 0 30 26.923">
+  <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(0 0)" fill="#fff" stroke="#7a031f" stroke-width="2">
+    <ellipse cx="15" cy="13.462" rx="15" ry="13.462" stroke="none"/>
+    <ellipse cx="15" cy="13.462" rx="14" ry="12.462" fill="none"/>
+  </g>
+  <path id="Path_120" data-name="Path 120" d="M.676,0c.373,0,.676,1,.676,1.371A.676.676,0,1,1,0,1.371C0,1,.3,0,.676,0Z" transform="translate(17.252 5.341) rotate(-48)" fill="#7a031f"/>
+  <path id="Path_121" data-name="Path 121" d="M.676,0c.373,0,.676,1,.676,1.371A.676.676,0,1,1,0,1.371C0,1,.3,0,.676,0Z" transform="translate(16.772 4.507) rotate(-104)" fill="#7a031f"/>
+  <path id="Path_122" data-name="Path 122" d="M.676,0c.373,0,.676,1,.676,1.371A.676.676,0,1,1,0,1.371C0,1,.3,0,.676,0Z" transform="matrix(-0.326, 0.946, -0.946, -0.326, 15.072, 3.298)" fill="#7a031f"/>
+  <path id="Path_123" data-name="Path 123" d="M.676,0c.373,0,.676,1,.676,1.371A.676.676,0,0,1,0,1.371C0,1,.3,0,.676,0Z" transform="matrix(0.629, 0.777, -0.777, 0.629, 14.832, 4.353)" fill="#7a031f"/>
+</svg>

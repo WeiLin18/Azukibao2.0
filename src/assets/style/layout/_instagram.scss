@@ -1,0 +1,86 @@
+.instagram__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: -8px;
+}
+
+.instagram__item {
+    width: calc((100% - 36px)/4);
+
+    @include mobile-lg {
+        width: calc((100% - 24px)/3);
+    }
+
+    @include mobile-xs {
+        width: calc((100% - 12px)/2);
+    }
+
+    &--text {
+        background-color: $primary;
+        display: flex;
+        justify-content: space-between;
+        @extend .mb-2,
+        .px-7,.px-sm-3,.py-6;
+
+        &:hover {
+            background-color: darken($primary, 5);
+        }
+
+        @include mobile-lg {
+            order: -1;
+            width: calc((100% - 24px) * 2 / 3 + 12px);
+        }
+
+        @include mobile-xs {
+            width: calc((100% - 12px)/2);
+        }
+
+
+    }
+
+}
+
+.instagram__link {
+    position: relative;
+
+
+    &:after {
+        content: '查看貼文';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, .4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all .4s;
+    }
+
+    &:hover::after {
+        opacity: 1;
+
+    }
+
+}
+
+.ig-logo {
+    display: block;
+    @include text-hide;
+    @include size(44px, 44px);
+    background: url('../images/ig-icon.svg') center center/ cover no-repeat;
+
+    @include notebook {
+        @include size(36px, 36px);
+    }
+
+    @include pad {
+        @include size(32px, 32px);
+    }
+
+}

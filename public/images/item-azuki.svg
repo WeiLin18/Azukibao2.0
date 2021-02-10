@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="234.842" height="243.126" viewBox="0 0 234.842 243.126">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Path_65" data-name="Path 65" d="M60.877,4.4c66.955-22.264,175.469,57.727,175.469,125.726s-25.027,113.6-93.026,113.6-98.038-26.5-125.69-98.711S-6.077,26.665,60.877,4.4Z" transform="translate(537 2695)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 1920 1280">
+      <image width="1920" height="1280" xlink:href="item-azuki-image.jpg"/>
+    </pattern>
+  </defs>
+  <g id="item-azuki" transform="translate(-549.831 -2707.329)">
+    <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(11.327 11.727)" clip-path="url(#clip-path)">
+      <rect id="red-bean-1074078_1920" width="279" height="338" transform="translate(518.673 2655.273)" fill="url(#pattern)"/>
+    </g>
+    <rect id="Rectangle_41" data-name="Rectangle 41" width="70" height="71" rx="33" transform="translate(637.853 2793.474)" fill="#fff"/>
+    <text id="h2" transform="translate(672.821 2842.41)" fill="#363434" font-size="36" font-family="PingFangSC-Medium, PingFang SC" font-weight="500" letter-spacing="0.04em"><tspan x="-18" y="0">豆</tspan></text>
+  </g>
+</svg>

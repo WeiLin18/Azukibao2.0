@@ -1,0 +1,26 @@
+.footer {
+    background: linear-gradient(0deg, #E2E2E2 0%, #FFFDFA 11%, #FFFDFA 86%, $light-gray 100%);
+
+    .container {
+        position: relative;
+
+        &:after {
+            @include pattern(40%);
+            top: 0;
+            right: 0;
+            bottom: 0;
+            @include mobile-lg{
+                width: calc((100% - 24px)/3);
+            }
+
+        
+            @include mobile-sm{
+                width: 20%;
+            }
+            @include mobile-xs{
+                width: 0;
+            }
+
+        }
+    }
+}

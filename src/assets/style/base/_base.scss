@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  // outline: 1px solid #f0a;
+}
+
+html,
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  color: $black;
+  overflow-x: hidden;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main{
+  padding-top: 80px;
+}
+

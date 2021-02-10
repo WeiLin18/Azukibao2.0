@@ -1,0 +1,160 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// $container-s-unit: 100px;
+// $container-s-unit-2l: 60px;
+// $container-s-unit-xl: 40px;
+.container-s {
+    padding-left: $container-s-unit;
+    padding-right: $container-s-unit;
+}
+
+.container-l {
+    padding-left: $container-s-unit;
+}
+
+.container-r {
+    padding-right: $container-s-unit;
+}
+
+
+
+.h-100 {
+    height: 100%;
+}
+
+.w {
+    &-25 {
+        width: 25%;
+    }
+
+    &-30 {
+        width: 30%;
+    }
+
+    // &-40 {
+    //     width: 40%;
+    // }
+
+    // &-33 {
+    //     width: 33.3333%;
+    // }
+
+    &-50 {
+        width: 50%;
+    }
+
+    &-55 {
+        width: 55%;
+    }
+
+    &-100 {
+        width: 100%;
+    }
+}
+
+
+
+@include notebook {
+    .container {
+        width: 95%;
+    }
+   
+    .container-s {
+        padding-left: $container-s-unit-2l;
+        padding-right: $container-s-unit-2l;
+    }
+    .container-l {
+        padding-left: $container-s-unit-2l;
+    }
+    .container-r {
+        padding-right: $container-s-unit-2l;
+    }
+
+    .w-2l-45{
+        width: 45%;
+    }
+
+
+    
+}
+
+
+@include pad {
+
+
+    .container-s {
+        padding-left: $container-s-unit-xl;
+        padding-right: $container-s-unit-xl;
+    }
+    .container-l {
+        padding-left: $container-s-unit-xl;
+    }
+    .container-r-xl-none {
+        padding-right: 0;
+    }
+}
+
+@include mobile-lg {
+  
+    .container-l {
+        padding-left: 0;
+    }
+    .w-lg-60{
+        width: 60%;
+    }
+}
+
+@include mobile-md {
+  
+
+    .w-md-70{
+        width: 70%;
+    }
+    .w-md-40{
+        width: 40%;
+    }
+    .w-md-60{
+        width: 60%;
+    }
+}
+
+
+@include mobile-sm {
+   
+   
+    .w-sm-80{
+        width: 80%;
+    }
+
+    .w-sm-100{
+        width: 100%;
+    }
+
+}
+
+@include mobile-xs {
+   
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .w-xs-100{
+        width: 100%;
+    }
+}
+
+// @include mobile-576 {
+//     .w-sm- {
+//         &50 {
+//             width: 50%;
+//         }
+
+//         &100 {
+//             width: 100%;
+//         }
+//     }
+// }

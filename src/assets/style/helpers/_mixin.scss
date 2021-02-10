@@ -1,0 +1,41 @@
+@mixin size($w:80px, $h:48px) {
+  width: $w;
+  height: $h;
+}
+
+@mixin before($width, $height) {
+  &::before {
+    content: '';
+    width: $width;
+    height: $height;
+    display: inline-block;
+
+    @content;
+  }
+}
+
+@mixin after($width, $height) {
+  &::after {
+    content: '';
+    width: $width;
+    height: $height;
+    display: inline-block;
+
+    @content;
+  }
+}
+
+@mixin text-hide {
+  text-indent: 101%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin pattern($w:100%) {
+  content: '';
+  position: absolute;
+  width: $w;
+  background: url('/./images/azuki-pattern.svg');
+}
+
+
