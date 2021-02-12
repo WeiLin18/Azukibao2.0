@@ -271,68 +271,68 @@
 
 
 
-// // ------------------------- material
-// .banner--material {
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: center center;
+// ------------------------- material
+.banner--material {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
 
-//     &--flour {
-//         background-image: url('../images/material-1.jpg');
-//     }
+    &--flour {
+        background-image: url('../../images/material-1.jpg');
+    }
 
-//     &--ma {
-//         background-image: url('../images/material-2.jpg');
-//     }
+    &--ma {
+        background-image: url('../../images/material-2.jpg');
+    }
 
-//     &--azuki {
-//         background-image: url('../images/material-3.jpg');
-//     }
+    &--azuki {
+        background-image: url('../../images/material-3.jpg');
+    }
 
-//     &--taro {
-//         background-image: url('../images/material-4.jpg');
-//     }
+    &--taro {
+        background-image: url('../../images/material-4.jpg');
+    }
 
-//     &--peanut {
-//         background-image: url('../images/material-5.jpg');
-//     }
+    &--peanut {
+        background-image: url('../../images/material-5.jpg');
+    }
 
-// }
+}
 
-// .banner__card--material {
-//     width: 360px;
-//     height: 100%;
-//     padding-top: 100px;
-//     margin-left: $container-s-unit;
+.banner__card--material {
+    width: 360px;
+    height: 100%;
+    padding-top: 100px;
+    margin-left: $container-s-unit;
 
-//     &:after {
-//         height: 44px;
-//     }
+    &:after {
+        height: 44px;
+    }
 
-//     @include notebook {
-//         margin-left: $container-s-unit-2l;
-//     }
+    @include notebook {
+        margin-left: $container-s-unit-2l;
+    }
 
-//     @include pad {
-//         margin-left: $container-s-unit-xl;
-//     }
+    @include pad {
+        margin-left: $container-s-unit-xl;
+    }
 
-//     @include mobile-lg {
-//         width: 320px;
-//     }
+    @include mobile-lg {
+        width: 320px;
+    }
 
-//     @include mobile-xs {
-//         width: 280px;
-//     }
+    @include mobile-xs {
+        width: 280px;
+    }
 
-// }
+}
 
-// .bao__steam {
-//     position: absolute;
-//     top: -30%;
-//     bottom: 0;
-//     left: 0;
-//     right: 0;
-//     pointer-events: none;
-// }
+.bao__steam {
+    position: absolute;
+    top: -30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+}

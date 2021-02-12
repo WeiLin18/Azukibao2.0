@@ -43,9 +43,9 @@ const InstagramFooter = () => {
     <footer class="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
       <div class="container">
           <ul class="instagram__list" data-aos="fade-up" data-aos-duration="1500">
-              {IGItems.map(IGItem => {
+              {IGItems.map((IGItem,index) => {
                 return (
-                  <li class="instagram__item mb-2">
+                  <li class="instagram__item mb-2" key={index}>
                     <a href={IGItem.linkURL} target="_blank" class="instagram__link">
                       <img src={IGItem.img} alt="instagram" />
                     </a>

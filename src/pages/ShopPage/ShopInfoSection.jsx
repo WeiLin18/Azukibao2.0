@@ -37,7 +37,7 @@ const {mapURL} = shopInfos;
 
 <section className="container">
     <h2 className="section__title">地圖</h2>
-    <iframe src={mapURL} height="400" frameborder="0" style={{border:0}} allowfullscreen="" aria-hidden="false" tabindex="0" className="w-100"></iframe>
+    <iframe src={mapURL} height="400" frameborder="0" style={{border:0}}  aria-hidden="false" tabIndex="0" className="w-100"></iframe>
 </section>
 </section>
   );

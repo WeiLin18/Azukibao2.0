@@ -1,6 +1,7 @@
 import React from "react";
 
-const MaterialListLi = (material) => {
+const MaterialListLi = (props) => {
+    const {material} = props;
     return (
         <li className={`material__item material__item--${material.className}`}>
             <img src={material.img} alt={material.className} />

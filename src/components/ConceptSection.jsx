@@ -22,19 +22,19 @@ const concepts = [
 
 const ConceptSection = () => {
   return (
-    <section class="pb-15 pb-2l-10">
-      <h2 class="section__title">品牌特色</h2>
-      <div class="container bg-light-gray py-16 py-2l-10">
-        <ul class="concepts__list">
+    <section className="pb-15 pb-2l-10">
+      <h2 className="section__title">品牌特色</h2>
+      <div className="container bg-light-gray py-16 py-2l-10">
+        <ul className="concepts__list">
           {concepts.map((concept, index) => {
             return (
-              <li class="concept" key={index}>
-                <div class="concept__pic">
+              <li className="concept" key={index}>
+                <div className="concept__pic">
                   <img src={concept.img} alt="illust-time" />
                 </div>
                   <div>
-                    <h3 class="concept__title">{concept.title}</h3>
-                    <p class="concept__details">{concept.details}</p>
+                    <h3 className="concept__title">{concept.title}</h3>
+                    <p className="concept__details">{concept.details}</p>
                   </div>
               </li>
               )
