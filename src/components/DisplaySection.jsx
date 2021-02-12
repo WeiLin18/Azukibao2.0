@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import steamImg1 from "../assets/images/steam-1.png";
-
+import baoImg1 from "../assets/images/1.png";
+import baoImg2 from "../assets/images/2.png";
+import baoImg3 from "../assets/images/3.png";
+import baoImg4 from "../assets/images/4.png";
+import baoImg5 from "../assets/images/5.png";
+import BackgroundImageOnLoad from 'background-image-on-load';
 
 const DisplaySection = (props) => {
     const { className, imgURL, labelText, title, price, details } = props;
-    const [baoOpen, setbaoOpen] = useState(false);
+    const [imageStatus, setImageStatus]  = useState(null);
+    const [baoOpen, setBaoOpen] = useState(false);
 
     return (
         <section className={`banner ${className}`}>
@@ -13,7 +19,7 @@ const DisplaySection = (props) => {
                 <div className="introduce">
                     <div className="introduce__pic po-re">
                         <Link to={`/popular/${title}`}>
-                            <div className={`introduce__pic__img introduce__pic__img--1 ${baoOpen?'bao-open':''}`} onMouseEnter={()=>{setbaoOpen(true)}} onMouseLeave={()=>{setbaoOpen(false)}}></div>
+                            <div className={`introduce__pic__img introduce__pic__img--1 ${imageStatus && baoOpen?'bao-open':''}`} onMouseEnter={()=>{setBaoOpen(true)}} onMouseLeave={()=>{setBaoOpen(false)}}></div>
                         </Link>
                         <ul className="bao__steam bao__steam--first">
                             <img src={steamImg1} alt="steam" className="bao__steam__item" />
@@ -41,6 +47,11 @@ const DisplaySection = (props) => {
                     </div>
                 </div>
             </div>
+            <BackgroundImageOnLoad
+            src={baoImg1,baoImg2,baoImg3,baoImg4,baoImg5}
+            onLoadBg={() => {setImageStatus(true)}}
+            onError={err => console.log('error', err)}
+          />
         </section>
     );
 };

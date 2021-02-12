@@ -18,8 +18,8 @@ const PopularPage = () => {
                 price={35}
                 details="小火慢熬的紅豆，手工揉製的麵團"
             />
-            <section class="bg-light-gray py-16">
-                <div class="container">
+            <section className="bg-light-gray py-16">
+                <div className="container">
                     <ConceptList />
                 </div>
             </section>
