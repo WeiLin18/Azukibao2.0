@@ -13,8 +13,10 @@ import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
 // import UserListPage from "./pages/user/UserListPage";
 // import UserProfilePage from "./pages/user/UserProfilePage";
-import BrandPage from "./pages/BrandPage";
 import HomePage from "./pages/HomePage";
+import BrandPage from "./pages/BrandPage";
+import MaterialPage from "./pages/MaterialPage";
+import PopularPage from "./pages/PopularPage";
 import ShopPage from "./pages/ShopPage";
 import "./assets/style/all.scss";
 // reach router
@@ -71,6 +73,12 @@ export default function App() {
             </Route> */}
             <Route path="/brand" exact>
               <BrandPage />
+            </Route>
+            <Route path="/popular" exact>
+              <PopularPage />
+            </Route>
+            <Route path="/material" exact>
+              <MaterialPage />
             </Route>
             <Route path="/shop" exact>
               <ShopPage />

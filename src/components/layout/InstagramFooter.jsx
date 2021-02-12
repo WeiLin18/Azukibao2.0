@@ -40,22 +40,22 @@ const IGItems = [
 
 const InstagramFooter = () => {
   return (
-    <footer class="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
-      <div class="container">
-          <ul class="instagram__list" data-aos="fade-up" data-aos-duration="1500">
+    <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
+      <div className="container">
+          <ul className="instagram__list" data-aos="fade-up" data-aos-duration="1500">
               {IGItems.map((IGItem,index) => {
                 return (
-                  <li class="instagram__item mb-2" key={index}>
-                    <a href={IGItem.linkURL} target="_blank" class="instagram__link">
+                  <li className="instagram__item mb-2" key={index}>
+                    <a href={IGItem.linkURL} target="_blank" className="instagram__link">
                       <img src={IGItem.img} alt="instagram" />
                     </a>
                   </li>
                 )
               })}
              
-              <li class="instagram__item instagram__item--text">
-                  <a href="https://www.instagram.com/" target="_blank" class="ig-logo">instagram</a>
-                  <ul class="align-self-end h4 font-2l-h5 font-xl-h6 text-white">
+              <li className="instagram__item instagram__item--text">
+                  <a href="https://www.instagram.com/" target="_blank" className="ig-logo">instagram</a>
+                  <ul className="align-self-end h4 font-2l-h5 font-xl-h6 text-white">
                       <li><a href="https://www.instagram.com/azukibao/" target="_blank">#FollowUs</a></li>
                       <li><a href="https://www.instagram.com/azukibao/" target="_blank">#Azukibao</a></li>
                   </ul>

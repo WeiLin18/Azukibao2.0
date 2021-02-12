@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import steamImg1 from "../assets/images/steam-1.png";
 
 
 const DisplaySection = (props) => {
-    const { bgStyle, imgURL, labelText, title, price, details } = props;
+    const { className, imgURL, labelText, title, price, details } = props;
+    const [baoOpen, setbaoOpen] = useState(false);
+
     return (
-        <section className={`banner ${bgStyle} py-16`}>
+        <section className={`banner ${className}`}>
             <div className="container container--introduce">
                 <div className="introduce">
                     <div className="introduce__pic po-re">
                         <Link to={`/popular/${title}`}>
-                            <div className="introduce__pic__img introduce__pic__img--1"></div>
+                            <div className={`introduce__pic__img introduce__pic__img--1 ${baoOpen?'bao-open':''}`} onMouseEnter={()=>{setbaoOpen(true)}} onMouseLeave={()=>{setbaoOpen(false)}}></div>
                         </Link>
                         <ul className="bao__steam bao__steam--first">
                             <img src={steamImg1} alt="steam" className="bao__steam__item" />

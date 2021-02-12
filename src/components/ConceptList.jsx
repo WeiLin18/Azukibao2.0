@@ -20,11 +20,8 @@ const concepts = [
   },
 ];
 
-const ConceptSection = () => {
+const ConceptList = () => {
   return (
-    <section className="pb-15 pb-2l-10">
-      <h2 className="section__title">品牌特色</h2>
-      <div className="container bg-light-gray py-16 py-2l-10">
         <ul className="concepts__list">
           {concepts.map((concept, index) => {
             return (
@@ -40,8 +37,6 @@ const ConceptSection = () => {
               )
             })}     
         </ul>
-      </div>
-  </section>
   );
 };
-export default ConceptSection;
+export default ConceptList;
