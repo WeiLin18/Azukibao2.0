@@ -1,19 +1,7 @@
 import React from "react";
 // import styled from "styled-components";
 import { Link } from "react-router-dom";
-
-const shops = [
-    {
-        title: '南京復興總店',
-        phone: '02-2222-2222',
-        address: '台北市中山區南京東路三段219號'
-    },
-    {
-        title: '板橋新埔2號店',
-        phone: '02-2222-8888',
-        address: '台北市中山區南京東路三段219號'
-    }
-];
+import {shopsInfos as shops} from '../../components/shop/ShopInfo'
 
 
 

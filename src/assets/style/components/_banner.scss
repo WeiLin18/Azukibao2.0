@@ -63,12 +63,7 @@
 // -------------------------paging
 // -------------------------index
 .banner--index {
-    .container {
-        background-image: url('/./images/banner-bg.png');
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
+ 
 
     .banner__bao {
         position: absolute;
@@ -272,13 +267,7 @@
     }
 }
 
-// -------------------------brand
-.banner--brand {
-    .container {
-        background-image: url('/./images/brand-banner.png');
-        background-size: cover;
-    }
-}
+
 
 
 

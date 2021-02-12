@@ -7,15 +7,15 @@ import {
   Redirect,
   useHistory
 } from "react-router-dom";
-import Header from "./pages/layout/Header";
-import InstagramFooter from "./pages/layout/InstagramFooter";
-import Footer from "./pages/layout/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
 // import UserListPage from "./pages/user/UserListPage";
 // import UserProfilePage from "./pages/user/UserProfilePage";
 import BrandPage from "./pages/BrandPage";
 import HomePage from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage";
 import "./assets/style/all.scss";
 // reach router
 export default function App() {
@@ -60,7 +60,7 @@ export default function App() {
     <BrowserRouter>
       <ChakraProvider>
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
-        <main>
+        
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -71,6 +71,9 @@ export default function App() {
             </Route> */}
             <Route path="/brand" exact>
               <BrandPage />
+            </Route>
+            <Route path="/shop" exact>
+              <ShopPage />
             </Route>
             {/* <Route path="/users/:userId">
               <UserProfilePage
@@ -93,8 +96,8 @@ export default function App() {
               />
             </Route>
           </Switch>
-          <InstagramFooter />
-        </main>
+          
+        
         <Footer />
       </ChakraProvider>
     </BrowserRouter>

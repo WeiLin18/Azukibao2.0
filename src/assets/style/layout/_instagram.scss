@@ -73,7 +73,7 @@
     display: block;
     @include text-hide;
     @include size(44px, 44px);
-    background: url('/./images/ig-icon.svg') center center/ cover no-repeat;
+    background: url('../../images/ig-icon.svg') center center/ cover no-repeat;
 
     @include notebook {
         @include size(36px, 36px);

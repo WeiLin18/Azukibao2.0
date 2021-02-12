@@ -5,6 +5,7 @@ import HomeBrandSection from "./HomeBrandSection";
 import HomeShopSection from "./HomeShopSection";
 import RankSection from "../../components/RankSection";
 import DisplaySection from "../../components/DisplaySection";
+import InstagramFooter from "../../components/layout/InstagramFooter";
 
 
 const HomePage = () => {
@@ -22,6 +23,7 @@ const HomePage = () => {
                 details="小火慢熬的紅豆，手工揉製的麵團"
             />
             <HomeShopSection />
+            <InstagramFooter />
         </>
     );
 };

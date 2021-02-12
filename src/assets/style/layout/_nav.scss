@@ -70,7 +70,7 @@
         &__icon {
             @include size(28px, 28px);
             display: block;
-            background: url('/./images/azuki-line.svg');
+            background: url('../../images/azuki-line.svg');
             margin-right: 8px;
         }
 
@@ -79,7 +79,7 @@
             font-weight: 500;
 
             .nav__link__icon {
-                background: url('/./images/azuki-dark.svg');
+                background: url('../../images/azuki-dark.svg');
             }
         }
 
