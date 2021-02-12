@@ -1,5 +1,4 @@
 import axios from "axios";
-
 export const getUserProfile = async (userId) => {
   const { data } = await axios.get(
     `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`

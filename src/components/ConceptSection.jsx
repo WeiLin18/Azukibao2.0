@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import timeSvg from "../assets/images/illust-time.svg";
 import handSvg from "../assets/images/illust-hand.svg";
 import materialSvg from "../assets/images/illust-material.svg";
@@ -19,29 +20,104 @@ const concepts = [
     img: materialSvg
   },
 ];
+const StyleConceptSection = styled.section`
+.concepts__list {
+  display: flex;
+  justify-content: space-between;
+
+  @include mobile-lg {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+
+.concept {
+  width: calc((100% - 84px) / 3);
+  @extend .pb-9;
+
+  @include mobile-lg {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+  }
+
+  @include mobile-sm {
+      flex-direction: column;
+  }
+
+  &__pic {
+      display: flex;
+      height: 200px;
+
+      @include mobile-lg {
+          width: 75%;
+          height: auto;
+      }
+
+      >* {
+          margin: auto;
+      }
+
+
+  }
+
+  &__title {
+      @extend .h3;
+      text-align: center;
+      @extend .mb-3;
+
+      // @include mobile-lg {
+      //     text-align: left;
+      //     padding-left: 28px;
+      // }
+  }
+
+  &__details {
+      @extend .h5,
+      .mb-3;
+      text-align: center;
+      text-align: left;
+      @extend .px-7;
+
+      @include mobile-lg {
+          padding-left: 8px;
+          padding-right: 8px;
+          font-size: 14px;
+      }
+
+      @include mobile-sm {
+          flex-direction: column;
+          padding-right: 24px;
+          padding-left: 24px;
+      }
+  }
+
+}
+`
 
 const ConceptSection = () => {
   return (
-    <section class="pb-15 pb-2l-10">
-      <h2 class="section__title">品牌特色</h2>
-      <div class="container bg-light-gray py-16 py-2l-10">
-        <ul class="concepts__list">
+    <StyleConceptSection className="pb-15 pb-2l-10">
+      <h2 className="section__title">品牌特色</h2>
+      <div className="container bg-light-gray py-16 py-2l-10">
+        <ul className="concepts__list">
           {concepts.map((concept, index) => {
             return (
-              <li class="concept" key={index}>
-                <div class="concept__pic">
+              <li className="concept" key={index}>
+                <div className="concept__pic">
                   <img src={concept.img} alt="illust-time" />
                 </div>
                   <div>
-                    <h3 class="concept__title">{concept.title}</h3>
-                    <p class="concept__details">{concept.details}</p>
+                    <h3 className="concept__title">{concept.title}</h3>
+                    <p className="concept__details">{concept.details}</p>
                   </div>
               </li>
               )
             })}     
         </ul>
       </div>
-  </section>
+  </StyleConceptSection>
   );
 };
 export default ConceptSection;
