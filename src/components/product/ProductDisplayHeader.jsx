@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
+import ProductContext from './ProductContext';
 
 
-const ProductDisplayHeader = (props) => {
-    const { targetProduct, categoryNum } = props;
+const ProductDisplayHeader = () => {
+    const {targetProduct} = useContext(ProductContext);
+
     const category = [
         '全部商品',
         '爆醬包子',
@@ -13,7 +15,7 @@ const ProductDisplayHeader = (props) => {
 return (
     <header className="banner">
         <div className="container container--introduce">
-            <div className="breadcumb h6 po-ab">商品一覽 / <span>{category[categoryNum]}</span> / <span>{targetProduct.name}</span></div>
+            <div className="breadcumb h6 po-ab">商品一覽 / <span>{targetProduct.name}</span></div>
             <div className="introduce">
                 <div className="introduce__pic">
                     <div className={`introduce__pic__img introduce__pic__img--${targetProduct.image}`}></div>

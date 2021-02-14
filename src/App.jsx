@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import ProductApp from "./components/product/ProductApp";
 import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
 // import UserListPage from "./pages/user/UserListPage";
@@ -20,6 +21,7 @@ import MaterialPage from "./pages/MaterialPage";
 import PopularPage from "./pages/PopularPage";
 import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
+import { ProductProvider } from './components/product/ProductContext';
 import "./assets/style/all.scss";
 // reach router
 function _ScrollToTop(props) {
@@ -75,10 +77,15 @@ export default function App() {
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
         
           <Switch>
+          <ProductProvider>
             <Route exact path="/">
               <HomePage />
               {/* <Redirect from="/" to="/users" /> */}
             </Route>
+            <Route path="/products">
+              <ProductApp category={0}/>
+            </Route>
+            </ProductProvider>
             {/* <Route path="/users" exact>
               <UserListPage />
             </Route> */}
@@ -87,9 +94,6 @@ export default function App() {
             </Route>
             <Route path="/popular" exact>
               <PopularPage />
-            </Route>
-            <Route path="/products" exact>
-              <ProductPage />
             </Route>
             <Route path="/material" exact>
               <MaterialPage />

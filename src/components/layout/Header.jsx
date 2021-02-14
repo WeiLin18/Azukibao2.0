@@ -26,7 +26,7 @@ const Header = ({ loginUserInfo, onLogOut }) => {
             {navLinks.map(navLink => {
               return (
                 <li className="nav__item" key={navLink.id}>
-                  <Link to={navLink.id} >
+                  <Link to={`/${navLink.id}`} >
                     <span className="nav__link">
                       <span className="nav__link__icon"></span>{navLink.description}
                     </span>
