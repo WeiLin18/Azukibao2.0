@@ -1,11 +1,13 @@
 import React from "react";
 import ProductListItem from "./ProductListItem";
+import ProductNav from "./ProductNav";
 import { allProducts } from '../../allProducts.js';
 
 const ProductListSection = (props) => {
   const { className, showNum } = props;
   return (
     <section className={className}>
+      <ProductNav />
       <div className="container">
         <ul className="products__list">
           {allProducts.slice(0,6).map((theProduct, index) => {
