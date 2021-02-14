@@ -1,23 +1,14 @@
 import React from "react";
-import ProductListItem from "../../components/product/ProductListItem";
-import ProductNav from "../../components/product/ProductNav";
-import { allProducts } from '../../allProducts.js';
+import ProductSection from "../../components/product/ProductSection";
 
-const HomeProductSection = () => {
+const ProductListSection = () => {
 
     return (
         <div className="container">
-            <ProductNav defaultCategory={0} />
-            <ul className="products__list">
-                {allProducts.map((theProduct, index) => {
-                    return (
-                        <ProductListItem product={theProduct} key={index} />
-                    )
-                })}
-            </ul>
+            <ProductSection defaultCategory={0} page="ProductPage"/>
         </div>
     );
 };
-export default HomeProductSection;
+export default ProductListSection;
 
 

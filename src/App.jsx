@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter,
   Route,
   Switch,
   Redirect,
-  useHistory
+  useHistory,
+  useLocation,
+  withRouter
 } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
@@ -21,6 +22,15 @@ import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
 import "./assets/style/all.scss";
 // reach router
+function _ScrollToTop(props) {
+  const { pathname } = useLocation();
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [pathname]);
+  return props.children
+}
+const ScrollToTop = withRouter(_ScrollToTop)
+
 export default function App() {
   const defaultLoginState = {
     isLogin: false,
@@ -61,7 +71,7 @@ export default function App() {
   // console.log(loginState);
   return (
     <BrowserRouter>
-      <ChakraProvider>
+      <ScrollToTop>
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
         
           <Switch>
@@ -111,7 +121,7 @@ export default function App() {
           
         
         <Footer />
-      </ChakraProvider>
+        </ScrollToTop>
     </BrowserRouter>
   );
 }
