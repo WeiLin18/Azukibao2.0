@@ -79,19 +79,19 @@
 
         &--1 {
             padding-top: 100%;
-            background-image: url('/./images/1.png');
+            background-image: url('../../images/1.png');
         }
         &--28 {
             padding-top: 76%;
-            background-image: url('/./images/product-big-28.png');
+            background-image: url('../../images/product-big-28.png');
         }
 
         &--half1 {
-            background-image: url('/./images/popular-half-1.png');
+            background-image: url('../../images/popular-half-1.png');
         }
 
         &--shop {
-            background-image: url('/./images/shop0.png');
+            background-image: url('../../images/shop0.png');
         }
     }
 
@@ -137,29 +137,29 @@
 
 @keyframes baoopen {
     0% {
-        background-image: url('/./images/1.png');
+        background-image: url('../../images/1.png');
         ;
     }
 
     20% {
-        background-image: url('/./images/2.png');
+        background-image: url('../../images/2.png');
         ;
     }
 
     40% {
-        background-image: url('/./images/3.png');
+        background-image: url('../../images/3.png');
     }
 
     60% {
-        background-image: url('/./images/4.png');
+        background-image: url('../../images/4.png');
     }
 
     80% {
-        background-image: url('/./images/5.png');
+        background-image: url('../../images/5.png');
     }
 
     100% {
-        background-image: url('/./images/5.png');
+        background-image: url('../../images/5.png');
     }
 
 }

@@ -39,6 +39,7 @@
 
 
 .nav {
+
     &__item~&__item {
         margin-left: 16px;
 
@@ -70,7 +71,7 @@
         &__icon {
             @include size(28px, 28px);
             display: block;
-            background: url('/./images/azuki-line.svg');
+            background: url('../../images/azuki-line.svg');
             margin-right: 8px;
         }
 
@@ -79,7 +80,7 @@
             font-weight: 500;
 
             .nav__link__icon {
-                background: url('/./images/azuki-dark.svg');
+                background: url('../../images/azuki-dark.svg');
             }
         }
 
@@ -175,6 +176,7 @@
         width: 140px;
         // height: 44px;
         margin-bottom: 20px;
+        cursor: pointer;
     }
 
     &__item~&__item {

@@ -1,23 +1,38 @@
-import React, { useState } from "react";
-import { ChakraProvider, Box } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter,
   Route,
   Switch,
   Redirect,
-  useHistory
+  useHistory,
+  useLocation,
+  withRouter
 } from "react-router-dom";
-import Header from "./pages/layout/Header";
-import InstagramFooter from "./pages/layout/InstagramFooter";
-import Footer from "./pages/layout/Footer";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import ProductApp from "./components/product/ProductApp";
 import LoginPage from "./pages/LoginAndSignup/LoginPage";
 import SignupPage from "./pages/LoginAndSignup/SignupPage";
 // import UserListPage from "./pages/user/UserListPage";
 // import UserProfilePage from "./pages/user/UserProfilePage";
-import BrandPage from "./pages/BrandPage";
 import HomePage from "./pages/HomePage";
+import BrandPage from "./pages/BrandPage";
+import MaterialPage from "./pages/MaterialPage";
+import PopularPage from "./pages/PopularPage";
+import ProductPage from "./pages/ProductPage";
+import ShopPage from "./pages/ShopPage";
+import { ProductProvider } from './components/product/ProductContext';
 import "./assets/style/all.scss";
 // reach router
+function _ScrollToTop(props) {
+  const { pathname } = useLocation();
+  useEffect(() => {
+      window.scrollTo(0, 0);
+  }, [pathname]);
+  return props.children
+}
+const ScrollToTop = withRouter(_ScrollToTop)
+
 export default function App() {
   const defaultLoginState = {
     isLogin: false,
@@ -58,19 +73,33 @@ export default function App() {
   // console.log(loginState);
   return (
     <BrowserRouter>
-      <ChakraProvider>
+      <ScrollToTop>
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
-        <main>
+        
           <Switch>
+          <ProductProvider>
             <Route exact path="/">
               <HomePage />
               {/* <Redirect from="/" to="/users" /> */}
             </Route>
+            <Route path="/products">
+              <ProductApp category={0}/>
+            </Route>
+            </ProductProvider>
             {/* <Route path="/users" exact>
               <UserListPage />
             </Route> */}
             <Route path="/brand" exact>
               <BrandPage />
+            </Route>
+            <Route path="/popular" exact>
+              <PopularPage />
+            </Route>
+            <Route path="/material" exact>
+              <MaterialPage />
+            </Route>
+            <Route path="/shop" exact>
+              <ShopPage />
             </Route>
             {/* <Route path="/users/:userId">
               <UserProfilePage
@@ -93,10 +122,10 @@ export default function App() {
               />
             </Route>
           </Switch>
-          <InstagramFooter />
-        </main>
+          
+        
         <Footer />
-      </ChakraProvider>
+        </ScrollToTop>
     </BrowserRouter>
   );
 }

@@ -1,6 +1,6 @@
 .logo {
     @include size(160px, 58px);
-    background: url('/./images/logo.svg') center / cover no-repeat;
+    background: url('../../images/logo.svg') center / cover no-repeat;
     @include text-hide;
 
     // @include mobile-sm {

@@ -341,7 +341,7 @@
   height: 28px;
   display: inline-block;
   border-radius: 100%;
-  background: url('../images/azuki-dark.svg') center / cover no-repeat;
+  background: url('../../images/azuki-dark.svg') center / cover no-repeat;
   opacity: 0.3;
   cursor: pointer;
 
@@ -366,7 +366,7 @@ button.swiper-pagination-bullet {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background-image: url('../images/azuki-dark.svg');
+  background-image: url('../../images/azuki-dark.svg');
 
   &:hover {
     opacity: 1;

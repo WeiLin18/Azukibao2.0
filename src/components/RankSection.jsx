@@ -1,5 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Autoplay, BreakPoints } from 'swiper';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/effect-fade/effect-fade.scss';
+import 'swiper/swiper.scss';
+// import '../assets/style/plugin/swiper-bundle.scss';
 import popImg1 from "../assets/images/popular-1.png";
 import popImg2 from "../assets/images/popular-2.png";
 import popImg3 from "../assets/images/popular-3.png";
@@ -37,33 +44,66 @@ const rankProducts = [
         imgURL: popImg5,
     },
 ];
+SwiperCore.use([Navigation, Autoplay]);
 
 const RankSection = () => {
     return (
         <section className="bg-light-gray pt-10 pb-23">
             <div className="container po-re">
                 <h2 className="section__title mb-16">注目商品</h2>
-                <div className="swiper-container swiper-container-popular">
-                    <ul className="swiper-wrapper cards__list">
-                        {rankProducts.map((rankProduct, index) => {
-                            return (
-                                <div className="swiper-slide card" key={index}>
-                                    <img src={rankProduct.imgURL} alt="popular3" className="card__pic" />
-                                    <li className="pt-55">
-                                        <div className="card__title">
-                                            <h2 className="card__title__name">{rankProduct.title}</h2>
-                                            <h3 className="card__title__price"><span className="dollor">NT</span>{rankProduct.price}元</h3>
-                                        </div>
-                                        <p className="card__details">{rankProduct.details}</p>
-                                        <Link to={`/popular/${rankProduct.title}`} className="link link-s block-center">了解更多</Link>
-                                    </li>
-                                </div>
-                            )
-                        })}
-                    </ul>
-                </div>
-                <div className="swiper-button-prev swiper-button-prev-popular"></div>
-                <div className="swiper-button-next swiper-button-next-popular"></div>
+                <Swiper
+                    spaceBetween={30}
+                    speed={800}
+                    loop
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }}
+                    autoplay={{
+                        delay: 4000,
+                        disableOnInteraction: false
+                    }}
+                    breakpoints={{  
+                        '414': {
+                          slidesPerView: 1,
+                          spaceBetween: 50, },
+                          '577': {
+                            slidesPerView: 2,
+                            spaceBetween: 12,},
+                    
+                        '992': {
+                          slidesPerView: 3,
+                          spaceBetween: 40,},
+                        '993': {
+                          slidesPerView: 3,
+                          spaceBetween: 20,},
+                        '1200': {
+                          slidesPerView: 3,
+                          spaceBetween: 40,},
+                      }}
+                    slidesPerView={3}
+                    className="swiper-container swiper-container-popular "
+                >
+                 <ul className="swiper-wrapper cards__list">
+                            {rankProducts.map((rankProduct, index) => {
+                                return (
+                                    <SwiperSlide className="swiper-slide card" key={index}>
+                                        <img src={rankProduct.imgURL} alt="popular3" className="card__pic" />
+                                        <li className="pt-55">
+                                            <div className="card__title">
+                                                <h2 className="card__title__name">{rankProduct.title}</h2>
+                                                <h3 className="card__title__price"><span className="dollor">NT</span>{rankProduct.price}元</h3>
+                                            </div>
+                                            <p className="card__details">{rankProduct.details}</p>
+                                            <Link to={`/popular/${rankProduct.title}`} className="card__link link link-s">了解更多</Link>
+                                        </li>
+                                    </SwiperSlide>
+                                )
+                            })}
+                        </ul>
+                    </Swiper>
+                    <div className="swiper-button-prev swiper-button-prev-popular"></div>
+                    <div className="swiper-button-next swiper-button-next-popular"></div>
             </div>
         </section>
     );
