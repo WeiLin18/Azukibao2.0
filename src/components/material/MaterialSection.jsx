@@ -1,7 +1,7 @@
 import React from "react";
 import { materialInfos } from "./MaterialInfos";
 import MaterialSliderDiv from "./MaterialSliderDiv";
-import MaterialListLi from "./MaterialListLi";
+import MaterialListItem from "./MaterialListItem";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, EffectFade, Autoplay } from 'swiper';
 import 'swiper/components/navigation/navigation.scss';
@@ -39,7 +39,7 @@ const MaterialSection = (props) => {
               <p className="h5 d-lg-none">創立於1987年的包子本鋪<br />藏身於中山區巷弄中<br />最初，是一對老夫妻騎著腳踏車沿路叫賣<br />不需要任何廣告或顯眼的招牌<br />腳踏車上插著妻子手染的紅色旗子<br />那塊隨風飄揚的朱紅便是包子本鋪最顯眼的招牌</p>
             </div>
             <ul>
-              {materialInfos.map((materialInfo, index) => <MaterialListLi material={materialInfo} key={index} />)}
+              {materialInfos.map((materialInfo, index) => <MaterialListItem material={materialInfo} key={index} />)}
             </ul>
           </SwiperSlide>
           {materialInfos.map((materialInfo, index) => {

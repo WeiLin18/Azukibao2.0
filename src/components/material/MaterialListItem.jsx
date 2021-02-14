@@ -1,6 +1,6 @@
 import React from "react";
 
-const MaterialListLi = (props) => {
+const MaterialListItem = (props) => {
     const {material} = props;
     return (
         <li className={`material__item material__item--${material.className}`}>
@@ -10,4 +10,4 @@ const MaterialListLi = (props) => {
     );
 };
 
-export default MaterialListLi;
+export default MaterialListItem;
