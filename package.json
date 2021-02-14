@@ -1,7 +1,7 @@
 {
-  "name": "akazukibao2.0",
+  "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://WeiLin18.github.io/akazukibao2.0",
+  "private": true,
   "dependencies": {
     "@chakra-ui/react": "1.1.5",
     "@emotion/react": "11.1.4",
