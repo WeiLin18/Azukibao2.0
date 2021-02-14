@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NavImg0 from "../../assets/images/product-nav-1.svg";
 import NavImg1 from "../../assets/images/product-nav-2.svg";
 import NavImg2 from "../../assets/images/product-nav-3.svg";
 import NavImg3 from "../../assets/images/product-nav-4.svg";
 import NavImg4 from "../../assets/images/product-nav-5.svg";
+import ProductNavItem from "./ProductNavItem";
 const productNavList = [
     {
         category: 0,
@@ -32,24 +33,20 @@ const productNavList = [
     },
 ];
 
-const ProductNav = () => {
-    const [targetNav, setTargetNav] = useState(1);
-    useEffect(() => {
-        handleOnClick
-    },[targetNav])
-    const handleOnClick = (e) => {
-        setTargetNav(e.target.getAttribute('data-category'));
+const ProductNav = (props) => {
+    const { defaultCategory } = props;
+    const [targetCategory, setTargetCategory] = useState(defaultCategory);
+
+
+    const HandleChoose = (category) => {
+        setTargetCategory(category);
     }
     return (
         <nav className="pt-4">
             <ul className="subnav mb-5">
-                {productNavList.map(navItem => {
+                {productNavList.map(theNavItem => {
                     return (
-                        <li className="subnav__item" key={navItem.category}>
-                            <span className={targetNav === navItem.category ? 'subnav__link subnav__link--active' : 'subnav__link'} onClick={handleOnClick} data-category={navItem.category}>
-                                <img src={navItem.img} alt="nav-img" className="mr-3" />{navItem.name}
-                            </span>
-                        </li>
+                        <ProductNavItem navItem={theNavItem} isActive={theNavItem.category === targetCategory} onChoose={HandleChoose} key={theNavItem.category} />
                     )
                 })}
 

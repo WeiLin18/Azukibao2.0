@@ -7,7 +7,7 @@ import RankSection from "../../components/RankSection";
 import DisplaySection from "../../components/DisplaySection";
 import InstagramFooter from "../../components/layout/InstagramFooter";
 import MaterialSection from "../../components/material/MaterialSection";
-import ProductListSection from "../../components/product/ProductListSection";
+import HomeProductSection from "./HomeProductSection";
 
 
 const HomePage = () => {
@@ -24,7 +24,7 @@ const HomePage = () => {
                 price={35}
                 details="小火慢熬的紅豆，手工揉製的麵團"
             />
-            <ProductListSection className="bg-light-gray pt-10 pb-16"/>
+            <HomeProductSection/>
             <MaterialSection className="pt-25"/>
             <HomeShopSection />
             <InstagramFooter />

@@ -1,23 +1,16 @@
 import React from "react";
 import ProductListItem from "./ProductListItem";
-import ProductNav from "./ProductNav";
 import { allProducts } from '../../allProducts.js';
 
-const ProductListSection = (props) => {
-  const { className, showNum } = props;
+const ProductList = () => {
   return (
-    <section className={className}>
-      <ProductNav />
-      <div className="container">
         <ul className="products__list">
-          {allProducts.slice(0,6).map((theProduct, index) => {
+          {allProducts.map((theProduct, index) => {
             return (
               <ProductListItem product={theProduct} key={index} />
             )
           })}
         </ul>
-      </div>
-    </section>
   );
 };
 export default ProductListSection;

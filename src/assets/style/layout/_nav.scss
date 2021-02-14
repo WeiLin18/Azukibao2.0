@@ -39,6 +39,7 @@
 
 
 .nav {
+
     &__item~&__item {
         margin-left: 16px;
 
@@ -175,6 +176,7 @@
         width: 140px;
         // height: 44px;
         margin-bottom: 20px;
+        cursor: pointer;
     }
 
     &__item~&__item {
