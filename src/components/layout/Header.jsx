@@ -1,6 +1,5 @@
-import React from "react";
-import { Flex, Box, Button, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import React,{useEffect} from "react";
+import { Link, useLocation} from "react-router-dom";
 
 const navLinks = [
   { id: "brand", description: "品牌理念" },
@@ -10,7 +9,8 @@ const navLinks = [
   { id: "shop", description: "店鋪情報" },
 ]
 const Header = ({ loginUserInfo, onLogOut }) => {
-  // console.log(loginUserState, "header");
+  let location = useLocation();
+
   const handleLogOut = () => {
     onLogOut && onLogOut();
   };
@@ -27,7 +27,7 @@ const Header = ({ loginUserInfo, onLogOut }) => {
               return (
                 <li className="nav__item" key={navLink.id}>
                   <Link to={`/${navLink.id}`} >
-                    <span className="nav__link">
+                    <span className={location.pathname ===`/${navLink.id}`?"nav__link nav__link--active":"nav__link"}>
                       <span className="nav__link__icon"></span>{navLink.description}
                     </span>
                   </Link>

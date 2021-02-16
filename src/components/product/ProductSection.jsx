@@ -1,24 +1,40 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import ProductNavItem from "./ProductNavItem";
 import ProductListItem from "./ProductListItem";
 import ProductNavInfos from "./ProductNavInfos";
 import { useHistory } from "react-router-dom";
 // import { allProducts } from '../../allProducts.js';
 import ProductContext from './ProductContext';
+import { useProductList } from "../../hooks/useProductList";
+import { Box, Progress } from "@chakra-ui/react";
+
 
 const ProductSection = (props) => {
-    const { productList, setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
+    const { productList, setProductList, setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
     const { defaultCategory } = props;
     const [targetCategory, setTargetCategory] = useState(defaultCategory);
-   
+    const { fetchProductList, error } = useProductList();
+    const [showProductList, setShowProductList] = useState(productList);
 
-    let defaultShowProductList = [];
-    if (defaultCategory == 0) {
-        defaultShowProductList = productList;
-    } else {
-        defaultShowProductList = productList.filter(product => parseInt(product.category) === defaultCategory);
+
+    const setDefaultProductList = () => {
+        if (!defaultCategory === 0) {
+            const defaultShowProductList = productList.filter(product => parseInt(product.category) === defaultCategory);
+            setShowProductList(defaultShowProductList);
+        }
     }
-    const [showProductList, setShowProductList] = useState(defaultShowProductList);
+
+    useEffect(() => {
+        console.log(fetchProductList);
+        setProductList(fetchProductList);
+        setShowProductList(fetchProductList);
+    }, [fetchProductList]);
+
+    useEffect(() => {
+        setDefaultProductList();
+    }, [productList]);
+
+
 
 
     const HandleChooseCategory = (targetCategory) => {
@@ -37,9 +53,19 @@ const ProductSection = (props) => {
         setTargetProduct && setTargetProduct(theProduct);
         history.push(`/products/${theProduct.name}`);
     }
-    // useEffect(() => {
-    //     setTargetProduct(targetProduct)
-    // }, [targetProduct])
+
+    if (error) {
+        return <div>{error.message}</div>;
+    } else if (!productList) {
+        return (
+            <Box maxW="200px" mx="auto">
+                <Box as="h2" mb="5" textAlign="center">
+                    loading
+            </Box>
+                <Progress size="xs" isIndeterminate />
+            </Box>
+        );
+    }
 
     return (
         <>

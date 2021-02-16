@@ -19,7 +19,6 @@ import HomePage from "./pages/HomePage";
 import BrandPage from "./pages/BrandPage";
 import MaterialPage from "./pages/MaterialPage";
 import PopularPage from "./pages/PopularPage";
-import ProductPage from "./pages/ProductPage";
 import ShopPage from "./pages/ShopPage";
 import { ProductProvider } from './components/product/ProductContext';
 import "./assets/style/all.scss";
@@ -27,7 +26,7 @@ import "./assets/style/all.scss";
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
   useEffect(() => {
-      window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [pathname]);
   return props.children
 }
@@ -75,57 +74,45 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTop>
         <Header loginUserInfo={loginInfo} onLogOut={handleClearLogin} />
-        
-          <Switch>
+
+        <Switch>
           <ProductProvider>
-            <Route exact path="/">
+            <Route path="/" exact>
               <HomePage />
-              {/* <Redirect from="/" to="/users" /> */}
             </Route>
             <Route path="/products">
-              <ProductApp category={0}/>
+              <ProductApp category={0} />
             </Route>
-            </ProductProvider>
-            {/* <Route path="/users" exact>
-              <UserListPage />
-            </Route> */}
-            <Route path="/brand" exact>
-              <BrandPage />
-            </Route>
-            <Route path="/popular" exact>
-              <PopularPage />
-            </Route>
-            <Route path="/material" exact>
-              <MaterialPage />
-            </Route>
-            <Route path="/shop" exact>
-              <ShopPage />
-            </Route>
-            {/* <Route path="/users/:userId">
-              <UserProfilePage
-                ondelete={handleClearLogin}
-                loginUserState={loginState}
-                loginUserInfo={loginInfo}
-                onupdateUserName={handleUserInfo}
-              />
-            </Route> */}
-            <Route path="/login">
-              <LoginPage
-                onLogin={handleLogin}
-                getThisUserInfo={handleUserInfo}
-              />
-            </Route>
-            <Route path="/signup">
-              <SignupPage
-                onLogin={handleLogin}
-                getThisUserInfo={handleUserInfo}
-              />
-            </Route>
-          </Switch>
-          
-        
+          <Route path="/brand" exact>
+            <BrandPage />
+          </Route>
+          <Route path="/popular" exact>
+            <PopularPage />
+          </Route>
+          <Route path="/material" exact>
+            <MaterialPage />
+          </Route>
+          <Route path="/shop" exact>
+            <ShopPage />
+          </Route>
+          <Route path="/login">
+            <LoginPage
+              onLogin={handleLogin}
+              getThisUserInfo={handleUserInfo}
+            />
+          </Route>
+          <Route path="/signup">
+            <SignupPage
+              onLogin={handleLogin}
+              getThisUserInfo={handleUserInfo}
+            />
+          </Route>
+          </ProductProvider>
+        </Switch>
+
+
         <Footer />
-        </ScrollToTop>
+      </ScrollToTop>
     </BrowserRouter>
   );
 }
