@@ -1,7 +1,21 @@
 import axios from "axios";
 
+export const getIGPosts = async () => {
+  const instagramID = "azukibao";
+  const instagramUrl = "https://www.instagram.com/" + instagramID + "/?__a=1";
+  const postList = await axios({
+    method: 'get',
+    url:instagramUrl,
+    // headers: {'Content-Type':'application/json'},
+    responseType: 'json',
+    });
+  return postList;
+}
+
 export const getUserProfile = async (userId) => {
-  const { data } = await axios.get(
+  const {
+    data
+  } = await axios.get(
     `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`
   );
   return data.result;
@@ -16,8 +30,7 @@ export const getUserList = async () => {
 
 export const loginTheMember = async (username, password) => {
   const storeTheMember = await axios.post(
-    `https://api.weblab.tw/v1/auth/general-login`,
-    {
+    `https://api.weblab.tw/v1/auth/general-login`, {
       appId: "weblab",
       account: username,
       password: password
@@ -29,8 +42,7 @@ export const loginTheMember = async (username, password) => {
 
 export const signupNewMember = async (email, username, password) => {
   const storeNewMember = await axios.post(
-    `https://api.weblab.tw/v1/auth/register`,
-    {
+    `https://api.weblab.tw/v1/auth/register`, {
       appId: "weblab",
       email: email,
       username: username,
@@ -46,8 +58,9 @@ export const deleteTheMember = async (userId, authToken) => {
     Authorization: `Bearer ${authToken}`
   };
   const storeTheMember = await axios.delete(
-    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`,
-    { headers }
+    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`, {
+      headers
+    }
   );
   return storeTheMember;
 };
@@ -63,13 +76,13 @@ export const updateTheMember = async (
     Authorization: `Bearer ${authToken}`
   };
   const storeTheMember = await axios.post(
-    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`,
-    {
+    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`, {
       username: username,
       description: description,
       pictureUrl: pictureUrl
-    },
-    { headers }
+    }, {
+      headers
+    }
   );
   return storeTheMember;
 };
