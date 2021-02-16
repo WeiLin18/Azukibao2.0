@@ -18,7 +18,7 @@ const DisplaySection = (props) => {
             <div className="container container--introduce">
                 <div className="introduce">
                     <div className="introduce__pic po-re">
-                        <Link to={`/popular/${title}`}>
+                        <Link to={`/popular/`}>
                             <div className={`introduce__pic__img introduce__pic__img--1 ${imageStatus && baoOpen?'bao-open':''}`} onMouseEnter={()=>{setBaoOpen(true)}} onMouseLeave={()=>{setBaoOpen(false)}}></div>
                         </Link>
                         <ul className="bao__steam bao__steam--first">

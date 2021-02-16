@@ -29,13 +29,13 @@ const rankProducts = [
         title: '牛奶芋泥包',
         price: 35,
         details: '香氣四溢的芋頭味，大人小孩的最愛，芋頭餡綿密不死甜，芋頭控不能錯過的點心。',
-        imgURL: popImg3,
+        imgURL: popImg4,
     },
     {
         title: '芝麻花生包',
         price: 35,
         details: '選用國產的上等落花生做成的天然花生醬，小豆包子的獨家口味，長年小豆包子的銷售排行榜亞軍。',
-        imgURL: popImg4,
+        imgURL: popImg3,
     },
     {
         title: '胚芽起司包',

@@ -4,8 +4,8 @@ import shopImg2 from "../../assets/images/shop2.png";
 import shopImg3 from "../../assets/images/shop3.png";
 
 
-const ShopInfoSection = (shopInfos) => {
-const {mapURL} = shopInfos;
+const ShopInfoSection = (props) => {
+const {shopInfos} = props;
   return (
 <section className="pb-25 pb-sm-10">
 <header className="banner mb-15">
@@ -37,7 +37,7 @@ const {mapURL} = shopInfos;
 
 <section className="container">
     <h2 className="section__title">地圖</h2>
-    <iframe src={mapURL} height="400" frameborder="0" style={{border:0}}  aria-hidden="false" tabIndex="0" className="w-100"></iframe>
+    <iframe src={shopInfos.mapURL} height="400" frameborder="0" style={{border:0}}  aria-hidden="false" tabIndex="0" className="w-100"></iframe>
 </section>
 </section>
   );
