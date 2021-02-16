@@ -86,3 +86,18 @@ export const updateTheMember = async (
   );
   return storeTheMember;
 };
+
+
+
+
+export const getProductList = async () => {
+  const headers = {
+    Authorization: `Bearer keyGqE8S8gTiAPmGY`
+  };
+  const productList = await axios.get(
+    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=3&view=Grid%20view`, {
+      headers
+    }
+  );
+  return productList;
+};

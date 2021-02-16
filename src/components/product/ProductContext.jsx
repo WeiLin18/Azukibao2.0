@@ -3,6 +3,7 @@ import { allProducts } from '../../allProducts.js';
 
 const ProductContext = createContext({
     productList: allProducts,
+    setProductList:null,
     targetCategoryNum: null,
     setTargetCategoryNum: null,
     targetProduct: {},
@@ -12,11 +13,12 @@ const ProductContext = createContext({
 export const ProductProvider = ({ children }) => {
     const [targetCategoryNum, setTargetCategoryNum] = useState(0);
     const [targetProduct, setTargetProduct] = useState({});
+    const [productList, setProductList] = useState(allProducts);
 
   return (
     <ProductContext.Provider
       value={{
-        productList: allProducts,
+        productList,setProductList,
         targetCategoryNum,setTargetCategoryNum,targetProduct,setTargetProduct
       }}
     >

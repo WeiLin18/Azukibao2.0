@@ -41,25 +41,25 @@ const IGItems = [
 ];
 
 const InstagramFooter = () => {
-  const { postList, error } = useIGPostList();
-  const [postListState, setPostListState] = useState(null);
-  useEffect(() => {
-    setPostListState(postList);
-    const igPhotoNum = 7;
-    const igPhotoUrl = "https://www.instagram.com/p/";
-  }, [postList]);
-  if (error) {
-    return <div>{error.message}</div>;
-  } else if (!postListState) {
-    return (
-      <Box maxW="200px" mx="auto">
-        <Box as="h2" mb="5" textAlign="center">
-          loading
-        </Box>
-        <Progress size="xs" isIndeterminate />
-      </Box>
-    );
-  }
+  // const { postList, error } = useIGPostList();
+  // const [postListState, setPostListState] = useState(null);
+  // useEffect(() => {
+  //   setPostListState(postList);
+  //   const igPhotoNum = 7;
+  //   const igPhotoUrl = "https://www.instagram.com/p/";
+  // }, [postList]);
+  // if (error) {
+  //   return <div>{error.message}</div>;
+  // } else if (!postListState) {
+  //   return (
+  //     <Box maxW="200px" mx="auto">
+  //       <Box as="h2" mb="5" textAlign="center">
+  //         loading
+  //       </Box>
+  //       <Progress size="xs" isIndeterminate />
+  //     </Box>
+  //   );
+  // }
   return (
     <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
       <div className="container">
