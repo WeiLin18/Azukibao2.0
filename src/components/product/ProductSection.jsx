@@ -9,7 +9,7 @@ import { Box, Progress } from "@chakra-ui/react";
 
 
 const ProductSection = (props) => {
-    const { productList, error, isLoading, setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
+    const { productList, error, isLoading, setTargetCategoryNum, setTargetProduct } = useContext(ProductContext);
     const { defaultCategory, defaultTargetProduct } = props;
     const [targetCategory, setTargetCategory] = useState(defaultCategory);
     const [showProductList, setShowProductList] = useState(productList);

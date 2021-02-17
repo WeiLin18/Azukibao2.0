@@ -19,9 +19,7 @@ const ProductApp = () => {
                             </div>
                         </main>
                     </Route>
-                    <Route path="/" exact>
-                                <ProductSection defaultCategory={1} defaultTargetProduct={null}/>
-                    </Route>
+                   
                     <Route path="/products/">
                         <main className="bg-light-gray">
                             <ProductDisplayHeader />

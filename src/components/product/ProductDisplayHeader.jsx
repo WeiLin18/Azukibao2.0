@@ -1,17 +1,20 @@
 import React,{useContext} from "react";
 import ProductContext from './ProductContext';
+import styled from "styled-components";
 
 
 const ProductDisplayHeader = () => {
-    const {targetProduct} = useContext(ProductContext);
+    const StyledDiv = styled.div`
+    padding-top: 84.7%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 76%;
+    transition: 1s;
+    cursor: pointer;
 
-    const category = [
-        '全部商品',
-        '爆醬包子',
-        '鹹味包子',
-        '養生饅頭',
-        '風味饅頭',
-    ]
+`;
+    const {targetProduct} = useContext(ProductContext);
+  
 return (
     <header className="banner">
         <div className="container container--introduce">

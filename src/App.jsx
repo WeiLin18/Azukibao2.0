@@ -81,7 +81,7 @@ export default function App() {
               <HomePage />
             </Route>
             <Route path="/products">
-              <ProductApp category={0} />
+              <ProductApp />
             </Route>
           <Route path="/brand" exact>
             <BrandPage />
