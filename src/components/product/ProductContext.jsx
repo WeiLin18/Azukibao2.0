@@ -7,7 +7,14 @@ const ProductContext = createContext({
     setProductList:null,
     targetCategoryNum: null,
     setTargetCategoryNum: null,
-    targetProduct: {},
+    targetProduct: {
+      category: '',
+      name: '',
+      price: '',
+      image: '',
+      slogan: '',
+      label: '',
+    },
     setTargetProduct: null,
   });
   

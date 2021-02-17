@@ -9,21 +9,21 @@ import { Box, Progress } from "@chakra-ui/react";
 
 
 const ProductSection = (props) => {
-    const { productList, error,isLoading,setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
-    const { defaultCategory,defaultTargetProduct } = props;
+    const { productList, error, isLoading, setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
+    const { defaultCategory, defaultTargetProduct } = props;
     const [targetCategory, setTargetCategory] = useState(defaultCategory);
     const [showProductList, setShowProductList] = useState(productList);
 
 
     const setDefaultState = () => {
         setTargetProduct(defaultTargetProduct);
-        if (defaultCategory === 1) {
+        if (productList && defaultCategory > 0) {
             const defaultShowProductList = productList.filter(product => parseInt(product.category) === defaultCategory);
             setShowProductList(defaultShowProductList);
         }
     }
 
- 
+
     useEffect(() => {
         setDefaultState();
     }, [productList]);
@@ -76,7 +76,7 @@ const ProductSection = (props) => {
             <ul className="products__list">
                 {showProductList.map((theProduct, index) => {
                     return (
-                        <ProductListItem product={theProduct} key={index} isActive={theProduct.name === targetProduct.name} onChoose={handleChangeProduct} />
+                        <ProductListItem product={theProduct} key={index} isActive={defaultTargetProduct && theProduct.name === defaultTargetProduct.name} onChoose={handleChangeProduct} />
                     )
                 })}
             </ul>
