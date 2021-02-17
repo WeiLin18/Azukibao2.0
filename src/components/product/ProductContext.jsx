@@ -1,5 +1,6 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import { allProducts } from '../../allProducts.js';
+import { useProductList } from "../../hooks/useProductList";
 
 const ProductContext = createContext({
     productList: allProducts,
@@ -9,16 +10,22 @@ const ProductContext = createContext({
     targetProduct: {},
     setTargetProduct: null,
   });
-
+  
 export const ProductProvider = ({ children }) => {
     const [targetCategoryNum, setTargetCategoryNum] = useState(0);
     const [targetProduct, setTargetProduct] = useState({});
     const [productList, setProductList] = useState(allProducts);
+    const { fetchProductList, error,isLoading } = useProductList();
+
+    useEffect(() => {
+
+      setProductList(fetchProductList);
+  }, [fetchProductList]);
 
   return (
     <ProductContext.Provider
       value={{
-        productList,setProductList,
+        productList,setProductList,error,isLoading,
         targetCategoryNum,setTargetCategoryNum,targetProduct,setTargetProduct
       }}
     >

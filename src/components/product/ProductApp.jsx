@@ -1,41 +1,36 @@
-import React, { useState, useContext, createContext } from "react";
+import React ,{useContext}from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ProductDisplayHeader from "./ProductDisplayHeader";
 import ProductSection from "./ProductSection";
 import InstagramFooter from "../layout/InstagramFooter";
+import ProductContext from './ProductContext';
 
 
-const ProductApp = (props) => {
-    const [targetCategoryNum, setTargetCategoryNum] = useState(0);
-    const [targetProduct, setTargetProduct] = useState({});
-    const { category } = props;
-
+const ProductApp = () => {
+    const { targetCategoryNum,targetProduct } = useContext(ProductContext);
     return (
         <BrowserRouter>
-           
                 <Switch>
-                    {/* <Route path="/" exact>
-                        <ProductSection defaultCategory={category} />
-                    </Route> */}
                     <Route path="/products" exact>
                         <main className="bg-light-gray">
                             <div className="container">
-                                <ProductSection defaultCategory={category} />
+                                <ProductSection defaultCategory={0} defaultTargetProduct={null}/>
                                 <InstagramFooter />
                             </div>
                         </main>
                     </Route>
-
+                    <Route path="/" exact>
+                                <ProductSection defaultCategory={1} defaultTargetProduct={null}/>
+                    </Route>
                     <Route path="/products/">
-                        <main class="bg-light-gray">
+                        <main className="bg-light-gray">
                             <ProductDisplayHeader />
-                            <section class="container">
-                                <ProductSection defaultCategory={targetCategoryNum} />
+                            <section className="container">
+                                <ProductSection defaultCategory={targetCategoryNum} defaultTargetProduct={targetProduct}/>
                             </section>
                         </main>
                     </Route>
-                </Switch>
-           
+                </Switch>    
         </BrowserRouter>
     );
 

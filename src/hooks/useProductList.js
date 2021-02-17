@@ -37,7 +37,7 @@ export const useProductList = () => {
     });
     getProductList()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         let filterList = [];
         for (const obj of res.data.records){
           filterList.push(obj.fields);

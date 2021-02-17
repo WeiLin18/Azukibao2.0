@@ -92,10 +92,10 @@ export const updateTheMember = async (
 
 export const getProductList = async () => {
   const headers = {
-    Authorization: `Bearer keyGqE8S8gTiAPmGY`
+    Authorization: `Bearer keylSyx9eoeosmjgQ`
   };
   const productList = await axios.get(
-    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=3&view=Grid%20view`, {
+    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=24&view=Grid%20view`, {
       headers
     }
   );

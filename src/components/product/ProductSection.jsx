@@ -5,33 +5,27 @@ import ProductNavInfos from "./ProductNavInfos";
 import { useHistory } from "react-router-dom";
 // import { allProducts } from '../../allProducts.js';
 import ProductContext from './ProductContext';
-import { useProductList } from "../../hooks/useProductList";
 import { Box, Progress } from "@chakra-ui/react";
 
 
 const ProductSection = (props) => {
-    const { productList, setProductList, setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
-    const { defaultCategory } = props;
+    const { productList, error,isLoading,setTargetCategoryNum, targetProduct, setTargetProduct } = useContext(ProductContext);
+    const { defaultCategory,defaultTargetProduct } = props;
     const [targetCategory, setTargetCategory] = useState(defaultCategory);
-    const { fetchProductList, error } = useProductList();
     const [showProductList, setShowProductList] = useState(productList);
 
 
-    const setDefaultProductList = () => {
-        if (!defaultCategory === 0) {
+    const setDefaultState = () => {
+        setTargetProduct(defaultTargetProduct);
+        if (defaultCategory === 1) {
             const defaultShowProductList = productList.filter(product => parseInt(product.category) === defaultCategory);
             setShowProductList(defaultShowProductList);
         }
     }
 
+ 
     useEffect(() => {
-        console.log(fetchProductList);
-        setProductList(fetchProductList);
-        setShowProductList(fetchProductList);
-    }, [fetchProductList]);
-
-    useEffect(() => {
-        setDefaultProductList();
+        setDefaultState();
     }, [productList]);
 
 
@@ -49,14 +43,14 @@ const ProductSection = (props) => {
     }
     const history = useHistory();
     const handleChangeProduct = (theProduct) => {
-        console.log(theProduct);
+        // console.log(theProduct);
         setTargetProduct && setTargetProduct(theProduct);
         history.push(`/products/${theProduct.name}`);
     }
 
     if (error) {
         return <div>{error.message}</div>;
-    } else if (!productList) {
+    } else if (isLoading) {
         return (
             <Box maxW="200px" mx="auto">
                 <Box as="h2" mb="5" textAlign="center">
