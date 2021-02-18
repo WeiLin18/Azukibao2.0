@@ -4,16 +4,17 @@ import styled from "styled-components";
 
 
 const ProductDisplayHeader = () => {
+    const {targetProduct} = useContext(ProductContext);
+    const bgURL = `https://raw.githubusercontent.com/WeiLin18/akazukibao2.0/dev/public/images/product-large-${targetProduct.image}.png`
     const StyledDiv = styled.div`
     padding-top: 84.7%;
     background-size: cover;
+    background-image: url("${bgURL}");
     background-repeat: no-repeat;
     padding-top: 76%;
-    transition: 1s;
     cursor: pointer;
-
 `;
-    const {targetProduct} = useContext(ProductContext);
+
   
 return (
     <header className="banner">
@@ -21,7 +22,7 @@ return (
             <div className="breadcumb h6 po-ab">商品一覽 / <span>{targetProduct.name}</span></div>
             <div className="introduce">
                 <div className="introduce__pic">
-                    <div className={`introduce__pic__img introduce__pic__img--${targetProduct.image}`}></div>
+                    <StyledDiv />
                 </div>
                 <div>
                     <div className="d-flex align-items-center justify-content-between">
