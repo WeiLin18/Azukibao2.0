@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import steam0Img from "../../assets/images/steam-0.png";
 import steam1Img from "../../assets/images/steam-1.png";
@@ -15,7 +15,6 @@ const StyledDiv = styled.div`
 const HomeHeroHeader = () => {
   let loadedImgCount = 0;
   const handleImgLoaded = (e) => {
-    const allImgCount = document.querySelectorAll('img[data-image="hero').length;
     loadedImgCount += 1;
     if (loadedImgCount === 4) {
       const hand = document.querySelector('.banner__hand');

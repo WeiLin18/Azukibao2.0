@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay, BreakPoints } from 'swiper';
+import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/effect-fade/effect-fade.scss';

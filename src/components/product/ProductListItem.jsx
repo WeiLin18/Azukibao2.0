@@ -8,7 +8,7 @@ const ProductListItem = (props) => {
     onChoose(product);
   }
   const isLabel = () => {
-    if (!product.label || product.label.trim == '') {
+    if (!product.label || product.label.trim === '') {
       return ''
     } else {
       return (<div className="product__item__label label">{product.label}</div>);
@@ -17,8 +17,8 @@ const ProductListItem = (props) => {
   return (
     <li className="product__item" onClick={handleChoose}>
       <div className={isActive ? "product__item__link product__item__link--active" : "product__item__link"}>
-        {isLabel()}
         <div className="product__item__pic">
+        {isLabel()}
           <img src={`https://raw.githubusercontent.com/WeiLin18/akazukibao2.0/dev/public/images/product-img-${product.image}.png`} alt="product" />
           <img src={ArrowSvg} alt="more" className="product__item__pic__link" />
         </div>

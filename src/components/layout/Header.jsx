@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React from "react";
 import { Link, useLocation} from "react-router-dom";
 
 const navLinks = [
@@ -14,13 +14,18 @@ const Header = ({ loginUserInfo, onLogOut }) => {
   const handleLogOut = () => {
     onLogOut && onLogOut();
   };
+  const handleClickMenu = (e) => {
+    e.currentTarget.classList.toggle("active");
+    const nav = document.querySelector(".nav");
+    nav.classList.toggle("active");
+  }
   return (
     <header className="header">
       <div className="d-flex justify-content-between align-items-center po-re">
         <Link to="/">
           <h1 className="logo">小豆包子</h1>
         </Link>
-        <div className="menu"><a className="menu__link" id="nav-toggle" href="#!"><span></span></a></div>
+        <div className="menu"><a className="menu__link" onClick={handleClickMenu} href="#"><span></span></a></div>
         <nav className="nav">
           <ul className="nav__list">
             {navLinks.map(navLink => {
@@ -34,27 +39,7 @@ const Header = ({ loginUserInfo, onLogOut }) => {
                 </li>
               )
             })}
-          {loginUserInfo.userId ? (
-              // <Link to="/login">
-              <li className="nav__item">
-                <span className="nav__link">
-                  <span className="nav__link__icon" onClick={handleLogOut}>
-                    登出</span>
-                </span>
-              </li>
-
-            ) : (
-              <li className="nav__item">
-                    <Link to="/login">
-                <span className="nav__link">
-                  <span className="nav__link__icon">登入</span>
-                </span>
-                </Link>
-              </li>
-              )}
-            {/* <Link to={`/users/${loginUserInfo.userId}`}>
-              <Text fontWeight="bold">{loginUserInfo.userName}</Text>
-            </Link> */}
+        
             
           </ul>
         </nav>

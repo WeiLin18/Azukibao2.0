@@ -9,7 +9,7 @@ import baoImg5 from "../assets/images/5.png";
 import BackgroundImageOnLoad from 'background-image-on-load';
 
 const DisplaySection = (props) => {
-    const { className, imgURL, labelText, title, price, details } = props;
+    const { className, labelText, title, price, details } = props;
     const [imageStatus, setImageStatus]  = useState(null);
     const [baoOpen, setBaoOpen] = useState(false);
 

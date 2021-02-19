@@ -8,6 +8,8 @@ import IGImg5 from "../../assets/images/ig5.png";
 import IGImg7 from "../../assets/images/ig7.png";
 import IGImg8 from "../../assets/images/ig8.png";
 import { useIGPostList } from "../../hooks/useIGPostList";
+import AOS from 'aos';
+import "../../assets/style/plugin/aos.css"; 
 
 const IGItems = [
   {
@@ -41,6 +43,15 @@ const IGItems = [
 ];
 
 const InstagramFooter = () => {
+  AOS.init({
+    duration : 1500
+  });
+  useEffect(() => {
+    AOS.init({
+      duration : 1500
+    });
+    AOS.refresh();
+  }, []);
   // const { postList, error } = useIGPostList();
   // const [postListState, setPostListState] = useState(null);
   // useEffect(() => {
@@ -63,7 +74,7 @@ const InstagramFooter = () => {
   return (
     <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
       <div className="container">
-          <ul className="instagram__list" data-aos="fade-up" data-aos-duration="1500">
+          <ul className="instagram__list" data-aos={"fade-up"}>
               {IGItems.map((IGItem,index) => {
                 return (
                   <li className="instagram__item mb-2" key={index}>

@@ -24,17 +24,29 @@
     .nav {
         position: fixed;
         top: 80px;
-        left: 0;
+        right: -100%;
         width: 100vw;
+        height: 100vh;
         background-color: $light-gray;
-        z-index: 10;
+        transition: all .5s;
     }
 
     .nav__list {
         flex-direction: column;
-        display: none;
+
+    }
+    .nav.active{
+        opacity: 1;
+        right: -60%;
+        transition: all .5s;
     }
 
+}
+
+@include mobile-md {
+    .nav.active{
+        right: 0;
+    }
 }
 
 
@@ -48,12 +60,7 @@
         }
     }
 
-    &__item:last-child {
-        @include pad {
-            box-shadow: 5px 5px 10px #ddd;
-        }
-    }
-
+   
 
     &__link {
         padding: 6px 12px;

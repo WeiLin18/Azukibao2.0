@@ -1,14 +1,26 @@
-import React from "react";
+import React, {useEffect} from "react";
+import AOS from 'aos';
+import "../../assets/style/plugin/aos.css"; 
 import storyFirstImg from "../../assets/images/brand-pic3-1.png";
 import storySecondImg from "../../assets/images/brand-pic3-2.png";
 import storyThirdImg from "../../assets/images/brand-pic3-3.png";
 
 const BrandStorySection = () => {
+  AOS.init({
+    duration : 1000
+  });
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <article>
     <div className="container">
       <section className="d-flex align-items-center justify-content-between flex-sm-column mb-md-5">
-        <h2 className="h5 font-lg-h6 w-50 w-md-60 w-sm-100 d-flex justify-content-center align-items-center p-2" data-aos="fade-up"  data-aos-duration="1000">
+        <h2 className="h5 font-lg-h6 w-50 w-md-60 w-sm-100 d-flex justify-content-center align-items-center p-2" data-aos={"fade-up"} >
           創立於1987年的小豆包子<br />
           藏身於中山區巷弄中<br />
           最初，是一對老夫妻騎著腳踏車沿路叫賣<br />
@@ -20,7 +32,7 @@ const BrandStorySection = () => {
       </section>
       <section className="d-flex align-items-center justify-content-between flex-sm-column mb-25 mb-2l-10 mb-md-5">
         <img src={storySecondImg} alt="brand-pic" className="w-50 w-md-40 w-sm-100" />
-        <h2 className="h5 font-lg-h6 w-50 w-md-60 w-sm-100 d-flex justify-content-center align-items-center p-2" data-aos="fade-up"  data-aos-duration="1000">
+        <h2 className="h5 font-lg-h6 w-50 w-md-60 w-sm-100 d-flex justify-content-center align-items-center p-2" data-aos={"fade-up"}   >
           創立於1987年的小豆包子<br />
           藏身於中山區巷弄中<br />
           最初，是一對老夫妻騎著腳踏車沿路叫賣<br />
