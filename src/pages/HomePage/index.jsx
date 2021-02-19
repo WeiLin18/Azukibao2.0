@@ -5,7 +5,6 @@ import HomeBrandSection from "./HomeBrandSection";
 import HomeShopSection from "./HomeShopSection";
 import RankSection from "../../components/RankSection";
 import DisplaySection from "../../components/DisplaySection";
-import InstagramFooter from "../../components/layout/InstagramFooter";
 import MaterialSection from "../../components/material/MaterialSection";
 import HomeProductSection from "./HomeProductSection";
 
@@ -27,7 +26,6 @@ const HomePage = () => {
             <HomeProductSection/>
             <MaterialSection className="pt-25"/>
             <HomeShopSection />
-            <InstagramFooter />
         </main>
     );
 };

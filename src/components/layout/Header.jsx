@@ -11,13 +11,19 @@ const navLinks = [
 const Header = ({ loginUserInfo, onLogOut }) => {
   let location = useLocation();
 
-  const handleLogOut = () => {
-    onLogOut && onLogOut();
-  };
+
   const handleClickMenu = (e) => {
+    e.preventDefault();
     e.currentTarget.classList.toggle("active");
     const nav = document.querySelector(".nav");
     nav.classList.toggle("active");
+  }
+
+  const handleClickLink = () => {
+    const menuLink = document.querySelector(".menu__link");
+    const nav = document.querySelector(".nav");
+    menuLink.classList.remove("active");
+    nav.classList.remove("active");
   }
   return (
     <header className="header">
@@ -30,7 +36,7 @@ const Header = ({ loginUserInfo, onLogOut }) => {
           <ul className="nav__list">
             {navLinks.map(navLink => {
               return (
-                <li className="nav__item" key={navLink.id}>
+                <li className="nav__item" key={navLink.id} onClick={handleClickLink}>
                   <Link to={`/${navLink.id}`} >
                     <span className={location.pathname.includes(`/${navLink.id}`)?"nav__link nav__link--active":"nav__link"}>
                       <span className="nav__link__icon"></span>{navLink.description}

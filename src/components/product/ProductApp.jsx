@@ -2,7 +2,6 @@ import React ,{useContext}from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ProductDisplayHeader from "./ProductDisplayHeader";
 import ProductSection from "./ProductSection";
-import InstagramFooter from "../layout/InstagramFooter";
 import ProductContext from './ProductContext';
 
 
@@ -15,7 +14,6 @@ const ProductApp = () => {
                         <main className="bg-light-gray">
                             <div className="container">
                                 <ProductSection defaultCategory={0} defaultTargetProduct={null}/>
-                                <InstagramFooter />
                             </div>
                         </main>
                     </Route>

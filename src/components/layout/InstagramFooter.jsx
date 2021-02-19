@@ -11,7 +11,7 @@ import { useIGPostList } from "../../hooks/useIGPostList";
 import AOS from 'aos';
 import "../../assets/style/plugin/aos.css"; 
 
-const IGItems = [
+const defaultIGItems = [
   {
     img: IGImg3,
     linkURL: 'https://www.instagram.com/p/CJYD06LMULA'
@@ -52,49 +52,48 @@ const InstagramFooter = () => {
     });
     AOS.refresh();
   }, []);
-  // const { postList, error } = useIGPostList();
-  // const [postListState, setPostListState] = useState(null);
-  // useEffect(() => {
-  //   setPostListState(postList);
-  //   const igPhotoNum = 7;
-  //   const igPhotoUrl = "https://www.instagram.com/p/";
-  // }, [postList]);
-  // if (error) {
-  //   return <div>{error.message}</div>;
-  // } else if (!postListState) {
-  //   return (
-  //     <Box maxW="200px" mx="auto">
-  //       <Box as="h2" mb="5" textAlign="center">
-  //         loading
-  //       </Box>
-  //       <Progress size="xs" isIndeterminate />
-  //     </Box>
-  //   );
-  // }
-  return (
-    <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
-      <div className="container">
-          <ul className="instagram__list" data-aos={"fade-up"}>
-              {IGItems.map((IGItem,index) => {
-                return (
-                  <li className="instagram__item mb-2" key={index}>
-                    <a href={IGItem.linkURL} target="_blank" className="instagram__link">
-                      <img src={IGItem.img} alt="instagram" />
-                    </a>
-                  </li>
-                )
-              })}
-             
-              <li className="instagram__item instagram__item--text">
-                  <a href="https://www.instagram.com/" target="_blank" className="ig-logo">instagram</a>
-                  <ul className="align-self-end h4 font-2l-h5 font-xl-h6 text-white">
-                      <li><a href="https://www.instagram.com/azukibao/" target="_blank">#FollowUs</a></li>
-                      <li><a href="https://www.instagram.com/azukibao/" target="_blank">#Azukibao</a></li>
-                  </ul>
-              </li>
-          </ul>
-      </div>
-  </footer>
-  );
+  const { postList,  isLoading } = useIGPostList();
+  const [postListState, setPostListState] = useState(defaultIGItems);
+  useEffect(() => {
+    postList && setPostListState(postList);
+  }, [postList]);
+   if (isLoading) {
+    return (
+      <Box maxW="200px" mx="auto">
+        <Box as="h2" mb="5" textAlign="center">
+          loading
+        </Box>
+        <Progress size="xs" isIndeterminate />
+      </Box>
+    )
+  }else {
+    return (
+      <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
+        <div className="container">
+            <ul className="instagram__list" data-aos={"fade-up"}>
+                {postListState.map((IGItem,index) => {
+                  return (
+                    <li className="instagram__item mb-2" key={index}>
+                      <a href={IGItem.linkURL} target="_blank" className="instagram__link">
+                        <img src={IGItem.imgURL} alt="instagram" />
+                      </a>
+                    </li>
+                  )
+                })}
+               
+                <li className="instagram__item instagram__item--text">
+                    <a href="https://www.instagram.com/" target="_blank" className="ig-logo">instagram</a>
+                    <ul className="align-self-end h4 font-2l-h5 font-xl-h6 text-white">
+                        <li><a href="https://www.instagram.com/azukibao/" target="_blank">#FollowUs</a></li>
+                        <li><a href="https://www.instagram.com/azukibao/" target="_blank">#Azukibao</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    );
+  }
+  
+
 };
 export default InstagramFooter;

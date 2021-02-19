@@ -4,7 +4,6 @@ import BrandHeroHeader from "./BrandHeroHeader";
 import ConceptList from "../../components/ConceptList";
 import PromotionSection from "../../components/layout/PromotionSection";
 import BrandStorySection from "./BrandStorySection";
-import InstagramFooter from "../../components/layout/InstagramFooter";
 
 const BrandPage = () => {
 
@@ -19,7 +18,6 @@ const BrandPage = () => {
       </section>
       <BrandStorySection />
       <PromotionSection />
-      <InstagramFooter />
     </main>
   );
 };

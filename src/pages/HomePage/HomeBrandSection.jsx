@@ -1,9 +1,8 @@
-import React,{useEffect} from "react";
+import React from "react";
 // import styled from "styled-components";
 import { Link } from "react-router-dom";
 import brandImg1 from "../../assets/images/brand-pic1.png";
 import brandImg2 from "../../assets/images/brand-pic2.png";
-import AOS from 'aos';
 import "../../assets/style/plugin/aos.css"; 
 
 
@@ -16,15 +15,6 @@ import "../../assets/style/plugin/aos.css";
 // `;
 
 const HomeBrandSection = () => {
-  AOS.init({
-    duration : 1000
-  });
-  useEffect(() => {
-    AOS.init({
-      duration : 1000
-    });
-    AOS.refresh();
-  }, []);
   return (
     <section className="py-16">
     <div className="container container-l container-r container-r-xl-none d-flex justify-content-between align-items-center flex-sm-column">

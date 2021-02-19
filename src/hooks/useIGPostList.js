@@ -17,28 +17,27 @@ export const useIGPostList = () => {
       data: null
     });
     getIGPosts()
-      .then((data) => {
-        // console.log(data);
+      .then((res) => {
+     
         const igPhotoNum = 7;
         const igPhotoUrl = "https://www.instagram.com/p/";
         let postList = [];
         for (let i = 0; i < igPhotoNum; i++) {
           let post = {
-            linkURL: `${igPhotoUrl}${data.graphql.user.edge_owner_to_timeline_media.edges[i].node.shortcode}`,
-            imgURL: `${data.graphql.user.edge_owner_to_timeline_media.edges[i].node.thumbnail_resources[4].src}`
+            linkURL: `${igPhotoUrl}${res.data.graphql.user.edge_owner_to_timeline_media.edges[i].node.shortcode}`,
+            imgURL: `${res.data.graphql.user.edge_owner_to_timeline_media.edges[i].node.thumbnail_resources[4].src}`
           }
           postList.push(post);
         }
-        // setListState({
-        //   isLoading: false,
-        //   error: null,
-        //   data:postList,
-        // });
+        setListState({
+          isLoading: false,
+          error: null,
+          data:postList,
+        });
 
-        // console.log(postList);
       })
       .catch((error) => {
-        // console.log(error);
+        console.log(error);
         setListState({
           isLoading: false,
           error: error,

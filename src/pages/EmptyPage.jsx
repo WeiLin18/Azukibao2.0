@@ -1,16 +1,15 @@
 import React from "react";
-// import styled from "styled-components";
-import MaterialSection from "../components/material/MaterialSection";
+import EmptySection from "../components/EmptySection";
 import PromotionSection from "../components/layout/PromotionSection";
 
 
-const MaterialPage = () => {
+const EmptyPage = () => {
     return (
         <main className="bg-light-gray">
-            <MaterialSection  />
+            <EmptySection  />
             <PromotionSection  />
         </main>
 
     );
 };
-export default MaterialPage;
+export default EmptyPage;

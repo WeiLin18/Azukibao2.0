@@ -5,7 +5,6 @@ import PopularHalfSection from "./PopularHalfSection";
 import ConceptList from "../../components/ConceptList";
 import RankSection from "../../components/RankSection";
 import PromotionSection from "../../components/layout/PromotionSection";
-import InstagramFooter from "../../components/layout/InstagramFooter";
 
 
 const PopularPage = () => {
@@ -26,7 +25,6 @@ const PopularPage = () => {
             <PopularHalfSection />
             <RankSection />
             <PromotionSection />
-            <InstagramFooter />
         </main>
 
     );
