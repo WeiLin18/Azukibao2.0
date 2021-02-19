@@ -45,6 +45,7 @@ const defaultIGItems = [
 const InstagramFooter = () => {
   AOS.init({
     duration : 1500
+
   });
   useEffect(() => {
     AOS.init({
@@ -70,7 +71,7 @@ const InstagramFooter = () => {
     return (
       <footer className="instagram bg-light-gray py-25 py-2l-15 py-xl-5">
         <div className="container">
-            <ul className="instagram__list" data-aos={"fade-up"}>
+            <ul className="instagram__list" data-aos={"fade-up"} data-aos-offset={"0"} data-aos-once={true}>
                 {postListState.map((IGItem,index) => {
                   return (
                     <li className="instagram__item mb-2" key={index}>

@@ -61,6 +61,9 @@ export default function App() {
           <Route path="/shop" exact>
             <ShopPage />
           </Route>
+          <Route path="/emptyPage" exact>
+            <EmptyPage />
+          </Route>
           </ProductProvider>
         </Switch>
         <div className="bg-gray">

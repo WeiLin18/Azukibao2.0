@@ -95,7 +95,7 @@ const RankSection = () => {
                                                 <h3 className="card__title__price"><span className="dollor">NT</span>{rankProduct.price}元</h3>
                                             </div>
                                             <p className="card__details">{rankProduct.details}</p>
-                                            <Link to={`/popular/${rankProduct.title}`} className="card__link link link-s">了解更多</Link>
+                                            <Link to={`/emptyPage`} className="card__link link link-s">了解更多</Link>
                                         </li>
                                     </SwiperSlide>
                                 )
