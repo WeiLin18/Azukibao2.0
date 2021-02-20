@@ -1,5 +1,10 @@
-import { useEffect, useState } from "react";
-import { getIGPosts } from "../utils";
+import {
+  useEffect,
+  useState
+} from "react";
+import {
+  getIGPosts
+} from "../utils";
 
 
 // custom hook
@@ -18,7 +23,9 @@ export const useIGPostList = () => {
     });
     getIGPosts()
       .then((res) => {
-     
+        if (res.data === null) {
+          throw new Error("data is null");
+        }
         const igPhotoNum = 7;
         const igPhotoUrl = "https://www.instagram.com/p/";
         let postList = [];
@@ -32,7 +39,7 @@ export const useIGPostList = () => {
         setListState({
           isLoading: false,
           error: null,
-          data:postList,
+          data: postList,
         });
 
       })
