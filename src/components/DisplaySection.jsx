@@ -1,25 +1,71 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import steamImg1 from "../assets/images/steam-1.png";
-import baoImg1 from "../assets/images/1.png";
-import baoImg2 from "../assets/images/2.png";
-import baoImg3 from "../assets/images/3.png";
-import baoImg4 from "../assets/images/4.png";
-import baoImg5 from "../assets/images/5.png";
-import BackgroundImageOnLoad from 'background-image-on-load';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import steamImg1 from '../assets/images/steam-1.png'
+import baoImg1 from '../assets/images/1.png'
+import baoImg2 from '../assets/images/2.png'
+import baoImg3 from '../assets/images/3.png'
+import baoImg4 from '../assets/images/4.png'
+import baoImg5 from '../assets/images/5.png'
 
 const DisplaySection = (props) => {
-    const { className, labelText, title, price, details } = props;
-    const [imageStatus, setImageStatus]  = useState(null);
-    const [baoOpen, setBaoOpen] = useState(false);
+    const { className, labelText, title, price, details } = props
+    const [imageStatus, setImageStatus] = useState(null)
+    const [baoOpen, setBaoOpen] = useState(false)
+    const StyledDiv = styled.div`
+        .bao-open {
+            animation: baoopen 1s 1 ease-out forwards;
+        }
+        @keyframes baoopen {
+            0% {
+                background-image: url(${baoImg1});
+            }
 
+            20% {
+                background-image: url(${baoImg2});
+            }
+
+            40% {
+                background-image: url(${baoImg3}');
+            }
+
+            60% {
+                background-image: url(${baoImg4});
+            }
+
+            80% {
+                background-image: url(${baoImg5});
+            }
+
+            100% {
+                background-image: url(${baoImg5});
+            }
+        }
+    `
+    let loadedImgCount = 0
+    const handleImgOnLaded = () => {
+        loadedImgCount += 1
+        if (loadedImgCount === 5) {
+            setImageStatus(true)
+        }
+    }
     return (
         <section className={`banner ${className}`}>
             <div className="container container--introduce">
                 <div className="introduce">
-                    <div className="introduce__pic po-re">
+                    <StyledDiv className="introduce__pic po-re">
                         <Link to={`/popular/`}>
-                            <div className={`introduce__pic__img introduce__pic__img--1 ${imageStatus && baoOpen?'bao-open':''}`} onMouseEnter={()=>{setBaoOpen(true)}} onMouseLeave={()=>{setBaoOpen(false)}}></div>
+                            <div
+                                className={`introduce__pic__img introduce__pic__img--1 ${
+                                    imageStatus && baoOpen ? 'bao-open' : ''
+                                }`}
+                                onMouseEnter={() => {
+                                    setBaoOpen(true)
+                                }}
+                                onMouseLeave={() => {
+                                    setBaoOpen(false)
+                                }}
+                            ></div>
                         </Link>
                         <ul className="bao__steam bao__steam--first">
                             <img src={steamImg1} alt="steam" className="bao__steam__item" />
@@ -31,11 +77,14 @@ const DisplaySection = (props) => {
                             <img src={steamImg1} alt="steam" className="bao__steam__item" />
                         </ul>
                         <div className="label introduce__pic__label">{labelText}</div>
-                    </div>
+                    </StyledDiv>
                     <div>
                         <div className="d-flex align-items-center justify-content-between">
                             <h2 className="h1">{title}</h2>
-                            <h3 className="h4"><span className="dollor">NT</span>{price}元</h3>
+                            <h3 className="h4">
+                                <span className="dollor">NT</span>
+                                {price}元
+                            </h3>
                         </div>
                         <h3 className="h4 font-xl-h5 mb-4">{details}</h3>
                         <ul className="h6">
@@ -47,12 +96,12 @@ const DisplaySection = (props) => {
                     </div>
                 </div>
             </div>
-            <BackgroundImageOnLoad
-            src={baoImg1,baoImg2,baoImg3,baoImg4,baoImg5}
-            onLoadBg={() => {setImageStatus(true)}}
-            onError={err => console.log('error', err)}
-          />
+            <img src={baoImg1} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg2} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg3} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg4} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg5} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
         </section>
-    );
-};
-export default DisplaySection;
+    )
+}
+export default DisplaySection

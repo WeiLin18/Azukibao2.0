@@ -37,7 +37,7 @@ const {shopInfos} = props;
 
 <section className="container">
     <h2 className="section__title">地圖</h2>
-    <iframe src={shopInfos.mapURL} height="400" frameborder="0" style={{border:0}}  aria-hidden="false" tabIndex="0" className="w-100"></iframe>
+    <iframe src={shopInfos.mapURL} height="400" frameBorder="0" style={{border:0}}  aria-hidden="false" tabIndex="0" className="w-100"></iframe>
 </section>
 </section>
   );
