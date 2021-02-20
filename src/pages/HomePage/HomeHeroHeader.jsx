@@ -19,7 +19,9 @@ const HomeHeroHeader = ({ onReadyShow }) => {
         loadedImgCount += 1
         if (loadedImgCount >= 3) {
             onReadyShow && onReadyShow()
-            setIsAllImgLoaded(true)
+            setTimeout(() => {
+                setIsAllImgLoaded(true)
+            }, 800)
         }
     }
 
@@ -67,7 +69,7 @@ const HomeHeroHeader = ({ onReadyShow }) => {
                     />
                 </ul>
             </div>
-            <div className="banner__hand" style={{ animation: getAnimationByScreen() }}>
+            <div className="banner__hand" style={isAllImgLoaded ? { animation: getAnimationByScreen() } : {}}>
                 <img src={handImg} alt="hand" onLoad={handleImgLoaded} />
             </div>
         </header>
