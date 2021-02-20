@@ -7,41 +7,41 @@ import baoImg2 from '../assets/images/2.png'
 import baoImg3 from '../assets/images/3.png'
 import baoImg4 from '../assets/images/4.png'
 import baoImg5 from '../assets/images/5.png'
+const StyledDiv = styled.div`
+    .bao-open {
+        animation: baoopen 1s 1 ease-out forwards;
+    }
+    @keyframes baoopen {
+        0% {
+            background-image: url(${baoImg1});
+        }
 
+        20% {
+            background-image: url(${baoImg2});
+        }
+
+        40% {
+            background-image: url(${baoImg3});
+        }
+
+        60% {
+            background-image: url(${baoImg4});
+        }
+
+        80% {
+            background-image: url(${baoImg5});
+        }
+
+        100% {
+            background-image: url(${baoImg5});
+        }
+    }
+`
 const DisplaySection = (props) => {
     const { className, labelText, title, price, details } = props
     const [imageStatus, setImageStatus] = useState(null)
     const [baoOpen, setBaoOpen] = useState(false)
-    const StyledDiv = styled.div`
-        .bao-open {
-            animation: baoopen 1s 1 ease-out forwards;
-        }
-        @keyframes baoopen {
-            0% {
-                background-image: url(${baoImg1});
-            }
 
-            20% {
-                background-image: url(${baoImg2});
-            }
-
-            40% {
-                background-image: url(${baoImg3}');
-            }
-
-            60% {
-                background-image: url(${baoImg4});
-            }
-
-            80% {
-                background-image: url(${baoImg5});
-            }
-
-            100% {
-                background-image: url(${baoImg5});
-            }
-        }
-    `
     let loadedImgCount = 0
     const handleImgOnLaded = () => {
         loadedImgCount += 1
@@ -96,11 +96,11 @@ const DisplaySection = (props) => {
                     </div>
                 </div>
             </div>
-            <img src={baoImg1} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
-            <img src={baoImg2} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
-            <img src={baoImg3} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
-            <img src={baoImg4} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
-            <img src={baoImg5} style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg1} alt="steam" style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg2} alt="steam" style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg3} alt="steam" style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg4} alt="steam" style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
+            <img src={baoImg5} alt="steam" style={{ display: 'none' }} onLoad={handleImgOnLaded}></img>
         </section>
     )
 }
