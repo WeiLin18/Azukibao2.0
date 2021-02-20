@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import ProductNavItem from './ProductNavItem'
 import ProductListItem from './ProductListItem'
 import ProductNavInfos from './ProductNavInfos'
+import ProductEmptyListItem from './ProductEmptyListItem'
 import { useHistory } from 'react-router-dom'
 import ProductContext from './ProductContext'
 
@@ -9,17 +10,20 @@ const ProductSection = (props) => {
     const {
         productList,
         error,
-        isLoading,
         targetCategoryNum,
         changeTargetCategoryNum,
         targetProductId,
         changeTargetProductId,
     } = useContext(ProductContext)
     const { defaultCategory } = props
-    const [showProductList, setShowProductList] = useState(productList)
+    const [showProductList, setShowProductList] = useState(null)
 
     useEffect(() => {
-        if (productList && defaultCategory !== 0) {
+        setShowProductList(productList)
+        if (!productList || !defaultCategory) {
+            return
+        }
+        if (defaultCategory !== 0) {
             const defaultShowProductList = productList.filter(
                 (product) => parseInt(product.category) === defaultCategory
             )
@@ -49,13 +53,7 @@ const ProductSection = (props) => {
 
     if (error) {
         return <div>{error.message}</div>
-    } else if (isLoading) {
-        return (
-            <div>
-                <h2>loading</h2>
-            </div>
-        )
-    } else if (showProductList) {
+    } else {
         return (
             <>
                 <nav className="pt-4">
@@ -73,16 +71,18 @@ const ProductSection = (props) => {
                     </ul>
                 </nav>
                 <ul className="products__list">
-                    {showProductList.map((theProduct, index) => {
-                        return (
-                            <ProductListItem
-                                product={theProduct}
-                                key={index}
-                                isActive={targetProductId && theProduct.id === targetProductId}
-                                onChoose={handleProductChange}
-                            />
-                        )
-                    })}
+                    {showProductList
+                        ? showProductList.map((theProduct, index) => {
+                              return (
+                                  <ProductListItem
+                                      product={theProduct}
+                                      key={index}
+                                      isActive={targetProductId && theProduct.id === targetProductId}
+                                      onChoose={handleProductChange}
+                                  />
+                              )
+                          })
+                        : [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => <ProductEmptyListItem />)}
                 </ul>
             </>
         )

@@ -54,7 +54,7 @@ const InstagramFooter = () => {
     const { postList, isLoading } = useIGPostList()
     const [postListState, setPostListState] = useState(defaultIGItems)
     useEffect(() => {
-        if (postList && postList.imgURL.trim() !== 0) {
+        if (postList && postList.imgURL !== 0) {
             setPostListState(postList)
         }
     }, [postList])

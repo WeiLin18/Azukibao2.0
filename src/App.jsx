@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Switch, useLocation, withRouter } from 'react-router-dom'
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
-import ProductPage from './pages/ProductPage'
+import ProductApp from './ProductApp'
 import HomePage from './pages/HomePage'
 import BrandPage from './pages/BrandPage'
 import MaterialPage from './pages/MaterialPage'
@@ -35,7 +35,7 @@ export default function App() {
                             <HomePage />
                         </Route>
                         <Route path="/products">
-                            <ProductPage />
+                            <ProductApp />
                         </Route>
                         <Route path="/brand" exact>
                             <BrandPage />

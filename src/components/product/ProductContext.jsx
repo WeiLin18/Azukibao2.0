@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from 'react'
-import { allProducts } from '../../allProducts.js'
 import { useProductList } from '../../hooks/useProductList'
 
 const ProductContext = createContext({
@@ -13,7 +12,7 @@ const ProductContext = createContext({
 export const ProductProvider = ({ children }) => {
     const [targetCategoryNum, setTargetCategoryNum] = useState(0)
     const [targetProductId, setTargetProductId] = useState(null)
-    const [productList, setProductList] = useState(allProducts)
+    const [productList, setProductList] = useState(null)
     const { fetchProductList, error, isLoading } = useProductList()
 
     useEffect(() => {
@@ -32,7 +31,7 @@ export const ProductProvider = ({ children }) => {
                 },
                 targetProductId,
                 changeTargetProductId: (targetProductId, callback) => {
-                    targetProductId && setTargetProductId(targetProductId)
+                    setTargetProductId(targetProductId)
                     callback && callback(targetProductId)
                 },
             }}

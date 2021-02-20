@@ -15,7 +15,8 @@ const ProductModal = () => {
         background-color: rgb(0, 0, 0, 0.2);
         z-index: 2000;
         top: 0px;
-        transition: 0.5s;
+        opacity: 1;
+        transition: 0.2s;
 
         .shadow {
             display: flex;
@@ -37,6 +38,9 @@ const ProductModal = () => {
             top: 20px;
             right: 20px;
             cursor: pointer;
+            :hover > circle {
+                fill: #eee;
+            }
         }
         .bg__img {
             padding-top: 84.7%;
@@ -48,13 +52,14 @@ const ProductModal = () => {
     `
     const history = useHistory()
     const handleModalClose = (e) => {
-        changeTargetProductId(null)
         const modal = modalRef.current
         if (modal) {
             modal.style.opacity = 0
-            modal.style.transition = '.5s'
         }
-        setTimeout(history.push(`/products`), 500)
+        setTimeout(() => {
+            changeTargetProductId(null)
+            history.push(`/products`)
+        }, 50)
     }
     const getCategoryName = () => {
         const targetNav = ProductNavInfos.find((navInfo) => navInfo.category === targetCategoryNum)
@@ -73,7 +78,7 @@ const ProductModal = () => {
     }
 
     return (
-        <StyledDiv id="modal" ref={modalRef}>
+        <StyledDiv ref={modalRef}>
             <div
                 className="shadow"
                 onClick={(e) => {
