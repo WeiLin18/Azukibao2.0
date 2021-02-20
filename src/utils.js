@@ -5,6 +5,7 @@ export const getIGPosts = async () => {
   const instagramUrl = "https://www.instagram.com/" + instagramID + "/?__a=1";
   const postList = await axios({
     method: 'get',
+    mode: 'no-cors',
     url: instagramUrl,
     // headers: {'Content-Type':'application/json'},
     responseType: 'json',

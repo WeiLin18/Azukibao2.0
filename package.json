@@ -1,7 +1,8 @@
 {
-  "name": "my-app",
+  "name": "akazukiBao",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://weilin18.com/",
   "dependencies": {
     "@chakra-ui/react": "1.1.5",
     "@emotion/react": "11.1.4",

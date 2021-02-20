@@ -9,38 +9,53 @@
  *
  * Released on: December 18, 2020
  */
- @mixin notebook { //2l
+
+
+
+@mixin notebook {
+
+  //2l
   @media (max-width: 1200px) {
     @content;
   }
 }
 
-@mixin pad { //xl
+@mixin pad {
+
+  //xl
   @media (max-width: 992px) {
     @content;
   }
 }
 
 
- @mixin mobile-lg { //lg
+@mixin mobile-lg {
+
+  //lg
   @media (max-width: 768px) {
     @content;
   }
 }
 
-@mixin mobile-md { //md
+@mixin mobile-md {
+
+  //md
   @media (max-width: 720px) {
     @content;
   }
 }
 
-@mixin mobile-sm {//sm
+@mixin mobile-sm {
+
+  //sm
   @media (max-width: 576px) {
     @content;
   }
 }
 
-@mixin mobile-xs { //xs
+@mixin mobile-xs {
+
+  //xs
   @media (max-width: 414px) {
     @content;
   }
@@ -282,7 +297,8 @@
   transition: 300ms opacity;
   transform: translate3d(0, 0, 0);
   z-index: 10;
-  @include mobile-sm{
+
+  @include mobile-sm {
     display: none;
   }
 
@@ -718,11 +734,12 @@ button.swiper-pagination-bullet {
     height: auto;
   }
 
-  @include mobile-sm{
+  @include mobile-sm {
     margin-right: 10%;
     margin-left: 10%;
   }
-  @include mobile-xs{
+
+  @include mobile-xs {
     margin-right: 5%;
     margin-left: 5%;
     margin-bottom: 40px;
@@ -746,17 +763,17 @@ button.swiper-pagination-bullet {
   .swiper-button-prev-popular {
     left: -24px;
   }
-  
+
   .swiper-button-next-popular {
     right: -24px;
   }
 }
 
-@include mobile-sm{
+@include mobile-sm {
   .swiper-button-prev-popular {
     left: 0px;
   }
-  
+
   .swiper-button-next-popular {
     right: 0px;
   }

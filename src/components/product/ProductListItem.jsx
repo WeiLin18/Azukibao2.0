@@ -5,7 +5,6 @@ const ProductListItem = (props) => {
     const { product, isActive, onChoose } = props
     const [ImageURL, setImageURL] = useState('')
     useEffect(() => {
-        console.log(product.imageSmall)
         product.imageSmall && setImageURL(product.imageSmall[0].url)
     }, [product.imageSmall])
     const handleChoose = () => {

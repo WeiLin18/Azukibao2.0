@@ -82,7 +82,7 @@ const ProductSection = (props) => {
                                   />
                               )
                           })
-                        : [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => <ProductEmptyListItem />)}
+                        : [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => <ProductEmptyListItem key={index} />)}
                 </ul>
             </>
         )

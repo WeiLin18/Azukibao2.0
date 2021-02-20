@@ -1,17 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Autoplay } from 'swiper';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/effect-fade/effect-fade.scss';
-import 'swiper/swiper.scss';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import SwiperCore, { Navigation, Autoplay } from 'swiper'
+import 'swiper/components/navigation/navigation.scss'
+import 'swiper/components/pagination/pagination.scss'
+import 'swiper/components/effect-fade/effect-fade.scss'
+import 'swiper/swiper.scss'
 // import '../assets/style/plugin/swiper-bundle.scss';
-import popImg1 from "../assets/images/popular-1.png";
-import popImg2 from "../assets/images/popular-2.png";
-import popImg3 from "../assets/images/popular-3.png";
-import popImg4 from "../assets/images/popular-4.png";
-import popImg5 from "../assets/images/popular-5.png";
+import popImg1 from '../assets/images/popular-1.png'
+import popImg2 from '../assets/images/popular-2.png'
+import popImg3 from '../assets/images/popular-3.png'
+import popImg4 from '../assets/images/popular-4.png'
+import popImg5 from '../assets/images/popular-5.png'
+
 const rankProducts = [
     {
         title: '經典豆沙包',
@@ -43,8 +44,8 @@ const rankProducts = [
         details: '爆醬起司配上胚芽的香氣，外表看似單調，內涵卻很豐富，適合當健身族的早餐或點心。',
         imgURL: popImg5,
     },
-];
-SwiperCore.use([Navigation, Autoplay]);
+]
+SwiperCore.use([Navigation, Autoplay])
 
 const RankSection = () => {
     return (
@@ -57,55 +58,65 @@ const RankSection = () => {
                     loop
                     navigation={{
                         nextEl: '.swiper-button-next',
-                        prevEl: '.swiper-button-prev'
+                        prevEl: '.swiper-button-prev',
                     }}
                     autoplay={{
                         delay: 4000,
-                        disableOnInteraction: false
+                        disableOnInteraction: false,
                     }}
-                    breakpoints={{  
-                        '414': {
-                          slidesPerView: 1,
-                          spaceBetween: 50, },
-                          '577': {
+                    breakpoints={{
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 50,
+                        },
+                        577: {
                             slidesPerView: 2,
-                            spaceBetween: 12,},
-                    
-                        '992': {
-                          slidesPerView: 3,
-                          spaceBetween: 40,},
-                        '993': {
-                          slidesPerView: 3,
-                          spaceBetween: 20,},
-                        '1200': {
-                          slidesPerView: 3,
-                          spaceBetween: 40,},
-                      }}
+                            spaceBetween: 12,
+                        },
+
+                        992: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
+                        993: {
+                            slidesPerView: 3,
+                            spaceBetween: 20,
+                        },
+                        1200: {
+                            slidesPerView: 3,
+                            spaceBetween: 40,
+                        },
+                    }}
                     slidesPerView={3}
                     className="swiper-container swiper-container-popular "
                 >
-                 <ul className="swiper-wrapper cards__list">
-                            {rankProducts.map((rankProduct, index) => {
-                                return (
-                                    <SwiperSlide className="swiper-slide card" key={index}>
-                                        <img src={rankProduct.imgURL} alt="popular3" className="card__pic" />
-                                        <li className="pt-55">
-                                            <div className="card__title">
-                                                <h2 className="card__title__name">{rankProduct.title}</h2>
-                                                <h3 className="card__title__price"><span className="dollor">NT</span>{rankProduct.price}元</h3>
-                                            </div>
-                                            <p className="card__details">{rankProduct.details}</p>
-                                            <Link to={`/emptyPage`} className="card__link link link-s">了解更多</Link>
-                                        </li>
-                                    </SwiperSlide>
-                                )
-                            })}
-                        </ul>
-                    </Swiper>
-                    <div className="swiper-button-prev swiper-button-prev-popular"></div>
-                    <div className="swiper-button-next swiper-button-next-popular"></div>
+                    <ul className="swiper-wrapper cards__list">
+                        {rankProducts.map((rankProduct, index) => {
+                            return (
+                                <SwiperSlide className="swiper-slide card" key={index}>
+                                    <img src={rankProduct.imgURL} alt="popular3" className="card__pic" />
+                                    <li className="pt-55">
+                                        <div className="card__title">
+                                            <h2 className="card__title__name">{rankProduct.title}</h2>
+                                            <h3 className="card__title__price">
+                                                <span className="dollor">NT</span>
+                                                {rankProduct.price}元
+                                            </h3>
+                                        </div>
+                                        <p className="card__details">{rankProduct.details}</p>
+                                        <Link to={`/emptyPage`} className="card__link link link-s">
+                                            了解更多
+                                        </Link>
+                                    </li>
+                                </SwiperSlide>
+                            )
+                        })}
+                    </ul>
+                </Swiper>
+                <div className="swiper-button-prev swiper-button-prev-popular"></div>
+                <div className="swiper-button-next swiper-button-next-popular"></div>
             </div>
         </section>
-    );
-};
-export default RankSection;
+    )
+}
+export default RankSection

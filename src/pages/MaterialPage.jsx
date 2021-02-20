@@ -1,5 +1,4 @@
 import React from "react";
-// import styled from "styled-components";
 import MaterialSection from "../components/material/MaterialSection";
 import PromotionSection from "../components/layout/PromotionSection";
 
