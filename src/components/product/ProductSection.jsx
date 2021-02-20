@@ -6,11 +6,16 @@ import { useHistory } from 'react-router-dom'
 import ProductContext from './ProductContext'
 
 const ProductSection = (props) => {
-    const { productList, error, isLoading, setTargetCategoryNum, targetProduct, changeTargetProduct } = useContext(
-        ProductContext
-    )
+    const {
+        productList,
+        error,
+        isLoading,
+        targetCategoryNum,
+        changeTargetCategoryNum,
+        targetProductId,
+        changeTargetProductId,
+    } = useContext(ProductContext)
     const { defaultCategory } = props
-    const [targetCategory, setTargetCategory] = useState(defaultCategory)
     const [showProductList, setShowProductList] = useState(productList)
 
     useEffect(() => {
@@ -23,19 +28,18 @@ const ProductSection = (props) => {
     }, [productList])
 
     const handleCategoryChange = (targetCategory) => {
-        setTargetCategory(targetCategory)
-        setTargetCategoryNum && setTargetCategoryNum(targetCategory)
+        changeTargetCategoryNum && changeTargetCategoryNum(targetCategory)
         if (targetCategory === 0) {
             setShowProductList(productList)
         } else {
-            let targetProductList = productList.filter((product) => parseInt(product.category) === targetCategory)
+            const targetProductList = productList.filter((product) => parseInt(product.category) === targetCategory)
             setShowProductList(targetProductList)
         }
     }
     const history = useHistory()
     const handleProductChange = (theProductId) => {
-        changeTargetProduct(theProductId, (targetProduct) => {
-            if (targetProduct === null) {
+        changeTargetProductId(theProductId, (targetProductId) => {
+            if (targetProductId === null) {
                 alert('沒產品')
             }
         })
@@ -60,7 +64,7 @@ const ProductSection = (props) => {
                             return (
                                 <ProductNavItem
                                     navItem={theNavItem}
-                                    isActive={theNavItem.category === targetCategory}
+                                    isActive={theNavItem.category === targetCategoryNum}
                                     onChoose={handleCategoryChange}
                                     key={theNavItem.category}
                                 />
@@ -74,7 +78,7 @@ const ProductSection = (props) => {
                             <ProductListItem
                                 product={theProduct}
                                 key={index}
-                                isActive={targetProduct && theProduct.id === targetProduct.id}
+                                isActive={targetProductId && theProduct.id === targetProductId}
                                 onChoose={handleProductChange}
                             />
                         )

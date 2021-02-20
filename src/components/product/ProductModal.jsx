@@ -6,7 +6,8 @@ import ProductNavInfos from './ProductNavInfos'
 import baoImg from '../../assets/images/product-img-1.png'
 const ProductModal = () => {
     const modalRef = useRef()
-    const { targetProduct, setTargetProduct, targetCategoryNum } = useContext(ProductContext)
+    const { productList, targetProductId, targetCategoryNum, changeTargetProductId } = useContext(ProductContext)
+    const targetProduct = productList.find((product) => product.id === targetProductId)
     const StyledDiv = styled.div`
         position: fixed;
         width: 100vw;
@@ -46,8 +47,8 @@ const ProductModal = () => {
         }
     `
     const history = useHistory()
-    const handleCloseModal = (e) => {
-        setTargetProduct(null)
+    const handleModalClose = (e) => {
+        changeTargetProductId(null)
         const modal = modalRef.current
         if (modal) {
             modal.style.opacity = 0
@@ -76,7 +77,7 @@ const ProductModal = () => {
             <div
                 className="shadow"
                 onClick={(e) => {
-                    e.currentTarget === e.target && handleCloseModal()
+                    e.currentTarget === e.target && handleModalClose()
                 }}
             >
                 <div className="container container--introduce">
@@ -90,7 +91,7 @@ const ProductModal = () => {
                         height="40"
                         viewBox="0 0 50 50"
                         className="close-btn"
-                        onClick={handleCloseModal}
+                        onClick={handleModalClose}
                     >
                         <circle cx="25" cy="25" r="23" fill="#fff" stroke="#7a031f" strokeWidth="3" />
                         <line x1="15" y1="15" x2="35" y2="35" stroke="#7a031f" strokeWidth="3" strokeLinecap="round" />
