@@ -138,6 +138,7 @@ const SimpleMap = (props) => {
 
     return (
         <div style={{ height: '100vh', width: '100%' }}>
+            <button onClick={handleClickShop}>123</button>
             {/* <input type="button" value="找咖啡廳" onClick={findCafeLocation} /> */}
             <GoogleMapReact
                 bootstrapURLKeys={{

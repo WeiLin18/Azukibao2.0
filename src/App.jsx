@@ -11,7 +11,7 @@ import ShopPage from './pages/ShopPage'
 import EmptyPage from './pages/EmptyPage'
 import InstagramFooter from './components/layout/InstagramFooter'
 import { ProductProvider } from './components/product/ProductContext'
-// import SimpleMap from './components/map/MapSection'
+import SimpleMap from './components/map/MapSection'
 import './assets/style/all.scss'
 // reach router
 function _ScrollToTop(props) {

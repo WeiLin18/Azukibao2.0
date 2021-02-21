@@ -96,9 +96,11 @@ export const getProductList = async () => {
     Authorization: `Bearer key4lVDAoPVsXi17d`
   };
   const productList = await axios.get(
-    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=21&view=Grid%20view`, {
+    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=24&view=Grid%20view`, {
       headers
     }
   );
   return productList;
 };
+
+export const Key = 'AIzaSyAMZPCqgHOxWuLljyr1UDf_Ce7AdeQ2EZA';

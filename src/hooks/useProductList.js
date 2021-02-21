@@ -1,5 +1,10 @@
-import { useEffect, useState } from "react";
-import { getProductList } from "../utils";
+import {
+  useEffect,
+  useState
+} from "react";
+import {
+  getProductList
+} from "../utils";
 
 // {
 //   "records": [
@@ -16,7 +21,7 @@ import { getProductList } from "../utils";
 //           },
 //           "createdTime": "2021-02-10T05:49:11.000Z"
 //       },
-     
+
 //   ],
 //   "offset": "recbPUqI5HtsSixvM"
 // }
@@ -39,13 +44,14 @@ export const useProductList = () => {
       .then((res) => {
         // console.log(res);
         let filterList = [];
-        for (const obj of res.data.records){
+        for (const obj of res.data.records) {
           filterList.push(obj.fields);
         }
+        let uploadList = filterList.filter(product => product.state === '上架')
         setListState({
           isLoading: false,
           error: null,
-          data: filterList
+          data: uploadList
         });
       })
       .catch((error) => {
