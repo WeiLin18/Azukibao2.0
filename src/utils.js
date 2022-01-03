@@ -1,8 +1,8 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const getIGPosts = async () => {
-  const instagramID = "azukibao";
-  const instagramUrl = "https://www.instagram.com/" + instagramID + "/?__a=1";
+  const instagramID = 'azukibao';
+  const instagramUrl = 'https://www.instagram.com/' + instagramID + '/?__a=1';
   const postList = await axios({
     method: 'get',
     mode: 'no-cors',
@@ -11,12 +11,10 @@ export const getIGPosts = async () => {
     responseType: 'json',
   });
   return postList;
-}
+};
 
 export const getUserProfile = async (userId) => {
-  const {
-    data
-  } = await axios.get(
+  const { data } = await axios.get(
     `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`
   );
   return data.result;
@@ -31,10 +29,11 @@ export const getUserList = async () => {
 
 export const loginTheMember = async (username, password) => {
   const storeTheMember = await axios.post(
-    `https://api.weblab.tw/v1/auth/general-login`, {
-      appId: "weblab",
+    `https://api.weblab.tw/v1/auth/general-login`,
+    {
+      appId: 'weblab',
       account: username,
-      password: password
+      password: password,
     }
   );
   // console.log(storeTheMember, "login");
@@ -43,11 +42,12 @@ export const loginTheMember = async (username, password) => {
 
 export const signupNewMember = async (email, username, password) => {
   const storeNewMember = await axios.post(
-    `https://api.weblab.tw/v1/auth/register`, {
-      appId: "weblab",
+    `https://api.weblab.tw/v1/auth/register`,
+    {
+      appId: 'weblab',
       email: email,
       username: username,
-      password: password
+      password: password,
     }
   );
 
@@ -56,11 +56,12 @@ export const signupNewMember = async (email, username, password) => {
 
 export const deleteTheMember = async (userId, authToken) => {
   const headers = {
-    Authorization: `Bearer ${authToken}`
+    Authorization: `Bearer ${authToken}`,
   };
   const storeTheMember = await axios.delete(
-    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`, {
-      headers
+    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`,
+    {
+      headers,
     }
   );
   return storeTheMember;
@@ -74,33 +75,31 @@ export const updateTheMember = async (
   authToken
 ) => {
   const headers = {
-    Authorization: `Bearer ${authToken}`
+    Authorization: `Bearer ${authToken}`,
   };
   const storeTheMember = await axios.post(
-    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`, {
+    `https://weblab-react-special-midtern.herokuapp.com/v1/users/${userId}`,
+    {
       username: username,
       description: description,
-      pictureUrl: pictureUrl
-    }, {
-      headers
+      pictureUrl: pictureUrl,
+    },
+    {
+      headers,
     }
   );
   return storeTheMember;
 };
 
-
-
-
 export const getProductList = async () => {
   const headers = {
-    Authorization: `Bearer key4lVDAoPVsXi17d`
+    Authorization: process.env.REACT_APP_AIRTABLE_AUTHORIZATION,
   };
   const productList = await axios.get(
-    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=24&view=Grid%20view`, {
-      headers
+    `https://api.airtable.com/v0/appg3oVGP0uMPl9rN/product?maxRecords=24&view=Grid%20view`,
+    {
+      headers,
     }
   );
   return productList;
 };
-
-export const Key = 'AIzaSyAMZPCqgHOxWuLljyr1UDf_Ce7AdeQ2EZA';

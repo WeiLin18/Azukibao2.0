@@ -1,4 +1,4 @@
-@mixin size($w:80px, $h:48px) {
+@mixin size($w: 80px, $h: 48px) {
   width: $w;
   height: $h;
 }
@@ -31,11 +31,9 @@
   white-space: nowrap;
 }
 
-@mixin pattern($w:100%) {
+@mixin pattern($w: 100%) {
   content: '';
   position: absolute;
   width: $w;
-  background: url('../../images/azuki-pattern.svg');
+  background: url('../../assets/images/azuki-pattern.svg');
 }
-
-
