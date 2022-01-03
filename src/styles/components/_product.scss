@@ -1,0 +1,133 @@
+.products__list {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.product__item {
+    width: 33.3%;
+    position: relative;
+
+    @extend .mb-10;
+    transition: all .5s;
+
+    @include pad {
+        width: 40%;
+    }
+
+    @include mobile-lg {
+        width: 45%;
+    }
+
+    @include mobile-md {
+        width: 50%;
+    }
+
+    @include mobile-sm {
+        width: 70%;
+    }
+
+    @include mobile-xs {
+        width: 90%;
+    }
+
+    &__link {
+        width: 80%;
+        margin: auto;
+        padding: 20px 0;
+        background-color: #fff;
+        border-radius: 55% 65% 50% 45%;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+            border-radius: 60% 55% 45% 50%;
+            @extend .bg-shoadow;
+        }
+
+        &--active {
+            position: relative;
+            border-radius: 60% 55% 45% 50%;
+            background-color: $pain-gray;
+            @extend .bg-shoadow;
+        }
+
+        @include pad {
+            width: 90%;
+        }
+
+        @include mobile-lg {
+            width: 95%;
+        }
+
+
+    }
+
+
+
+
+    &__pic {
+        position: relative;
+        display: flex;
+        @include size(100%, 160px);
+
+        >* {
+            margin: auto;
+        }
+
+        &__link {
+            position: absolute;
+            right: 40px;
+            bottom: 20px;
+            animation: swing 2s ease-in-out infinite;
+        }
+
+
+    }
+
+    &__label {
+        position: absolute;
+        font-size: 14px;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+
+        &__name {
+            @extend .h4;
+        }
+
+        &__price {
+            @extend .h5;
+            line-height: 40px;
+            margin-left: 32px;
+        }
+
+    }
+
+
+    &__details {
+        @extend .h6;
+    }
+}
+
+
+
+@keyframes swing {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

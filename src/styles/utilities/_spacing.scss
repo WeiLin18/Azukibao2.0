@@ -1,0 +1,256 @@
+// $space-unit: 4px;
+// ----------------------------margin-bottom
+@each $level in 1,
+2,
+3,
+4,
+5,
+8,
+9,
+10,
+12,
+14,
+15,
+16,
+21,
+25 {
+  .mb-#{$level} {
+    margin-bottom: $space-unit * $level;
+  }
+}
+
+// @include pad-992{
+//     @each $level in 1,2,4,5,7,8,10,18,26{
+//         .mb-md-#{$level} {
+//             margin-bottom: $space-unit * $level;
+//         }
+//     }
+// }
+// @include mobile-576{
+//     @each $level in 2,4,5,8,14 {
+//         .mb-sm-#{$level} {
+//             margin-bottom: $space-unit * $level;
+//         }
+//     }
+// }
+// ----------------------------margin-top
+@each $level in 10,25 {
+  .mt-#{$level} {
+    margin-top: $space-unit * $level;
+  }
+}
+
+// ----------------------------margin-left
+@each $level in 3,
+19,
+25 {
+  .ml-#{$level} {
+    margin-left: $space-unit * $level;
+  }
+}
+
+@each $level in 3,
+4,5,
+8,
+9,
+10,
+13,
+15 {
+  .mr-#{$level} {
+    margin-right: $space-unit * $level;
+  }
+
+}
+
+
+
+
+// ----------------------------padding top & bottom
+@each $level in 4,
+10,
+15,
+25,
+30,
+55 {
+  .pt-#{$level} {
+    padding-top: $space-unit * $level;
+  }
+}
+
+@each $level in 9,
+11,
+15,
+16,
+23,
+25,30 {
+  .pb-#{$level} {
+    padding-bottom: $space-unit * $level;
+  }
+}
+
+@each $level in 4 {
+  .pl-#{$level} {
+    padding-left: $space-unit * $level;
+  }
+}
+
+@each $level in 25 {
+  .pr-#{$level} {
+    padding-right: $space-unit * $level;
+  }
+}
+
+// ----------------------------padding x,y
+@each $level in 6,
+7 {
+  .px-#{$level} {
+    padding-left: $space-unit * $level;
+    padding-right: $space-unit * $level;
+  }
+}
+
+@each $level in 6,
+8,
+15,
+16,
+20,
+25,30 {
+  .py-#{$level} {
+    padding-top: $space-unit * $level;
+    padding-bottom: $space-unit * $level;
+  }
+}
+
+@each $level in 2 {
+  .p-#{$level} {
+    padding: $space-unit * $level;
+  }
+}
+
+.m-auto {
+  margin: auto;
+}
+
+
+
+@include notebook {
+  @each $level in 10,15 {
+    .py-2l-#{$level} {
+      padding-top: $space-unit * $level;
+      padding-bottom: $space-unit * $level;
+    }
+  }
+  @each $level in 10 {
+    .pt-2l-#{$level} {
+      padding-top: $space-unit * $level;
+    }
+  }
+  @each $level in 10 {
+    .pb-2l-#{$level} {
+      padding-bottom: $space-unit * $level;
+    }
+  }
+  @each $level in 10 {
+    .mb-2l-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+  @each $level in 0 {
+    .mt-2l-#{$level} {
+      margin-top: $space-unit * $level;
+    }
+  }
+
+}
+
+@include pad {
+  @each $level in 5,10 {
+    .mr-xl-#{$level} {
+      margin-right: $space-unit * $level;
+    }
+  }
+
+  @each $level in 5,35 {
+    .py-xl-#{$level} {
+      padding-top: $space-unit * $level;
+      padding-bottom: $space-unit * $level;
+    }
+  }
+
+  @each $level in 10{
+    .pb-xl-#{$level} {
+      padding-bottom: $space-unit * $level;
+    }
+  }
+
+
+  @each $level in 0,{
+    .mb-xl-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+}
+
+@include mobile-lg {
+  @each $level in 0 {
+    .mr-lg-#{$level} {
+      margin-right: $space-unit * $level;
+    }
+  }
+  @each $level in 5 {
+    .mb-lg-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+}
+
+@include mobile-md {
+  @each $level in 5 {
+    .mb-md-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+}
+
+
+@include mobile-sm {
+  @each $level in 3 {
+    .px-sm-#{$level} {
+      padding-left: $space-unit * $level;
+      padding-right: $space-unit * $level;
+    }
+  }
+  @each $level in 10 {
+    .pb-sm-#{$level} {
+      padding-bottom: $space-unit * $level;
+    }
+  }
+  @each $level in 2,5,10,12 {
+    .mb-sm-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+  @each $level in 10 {
+    .mt-sm-#{$level} {
+      margin-top: $space-unit * $level;
+    }
+  }
+  @each $level in 0 {
+    .mr-sm-#{$level} {
+      margin-right: $space-unit * $level;
+    }
+  }
+}
+
+@include mobile-xs {
+  @each $level in 0 {
+    .pt-xs-#{$level} {
+      padding-top: $space-unit * $level;
+    }
+  }
+  @each $level in 5 {
+    .mb-xs-#{$level} {
+      margin-bottom: $space-unit * $level;
+    }
+  }
+}

@@ -1,0 +1,150 @@
+// -------------------------material
+.material__details{
+    margin-right: 400px;
+    margin-top: 160px;
+    @include mobile-lg{
+        margin-top: 50px;
+        margin-right: 0;
+    }
+    @include mobile-sm{
+        margin-top: 20px;
+    }
+}
+.material__item {
+    position: absolute;
+
+    &--flour {
+        top: 20px;
+        right: 40%;
+
+        @include notebook{
+            right: 37%;
+        }
+
+        @include pad{
+            width: 191px;
+            right: 36%;
+        }
+        @include mobile-lg{
+            right: 64%;
+            top: 130px;
+        }
+        @include mobile-sm{
+            width: 180px;
+            right: auto;
+        }
+ 
+    }
+
+    &--ma {
+        top: 26px;
+        right: 4%;
+        @include pad{
+            width: 245px;
+            top: 34px;
+            right: 2%;
+        }
+        @include mobile-lg{
+            top: 84px;
+            right: 6%;
+        }
+        @include mobile-sm{
+            width: 220px;
+            top: 74px;
+            right: 4%;
+        }
+  
+        
+    }
+
+    &--azuki {
+        top: 200px;
+        right: 20%;
+        @include notebook{
+            right: 15%;
+        }
+        @include pad{
+            width: 210px;
+        }
+        @include mobile-lg{
+            width: 200px;
+            right: 32%;
+            top: 224px;
+        }
+        @include mobile-sm{
+            width: 175px;
+            right: 28%;
+            top: 240px;
+        }
+    }
+
+    &--taro {
+        bottom: 50px;
+        right: 40%;
+        @include notebook{
+            right: 32%;
+      
+            bottom: 70px;
+
+        }
+        @include pad{
+            right: 28%;
+            width: 210px;
+        }
+        @include mobile-lg{
+            right: auto;
+            left: 5%;
+            bottom: 114px;
+        }
+        @include mobile-sm{
+            width: 180px;
+            left: 0;
+            bottom: 113px;
+        }
+    }
+
+    &--peanut {
+        bottom: -15px;
+        right: 0;
+        @include notebook{
+            right: -3%;
+        }
+        @include pad{
+            width: 292px;
+            bottom: 35px;
+        }
+
+        @include mobile-lg{
+            right: 2%;
+            bottom: 35px;
+        }
+        @include mobile-sm{
+            width: 250px;
+            right: 2%;
+            bottom: -7px;
+        }
+    }
+
+    &__word {
+        @include size(70px, 70px);
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: #fff;
+        @extend .h1;
+        text-align: center;
+        color: $dark-gray;
+        @include pad {
+            @include size(56px, 56px); 
+        }
+        @include mobile-xs {
+            @include size(48px, 48px); 
+        }
+    }
+
+
+}

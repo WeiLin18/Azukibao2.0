@@ -1,0 +1,72 @@
+// color
+$primary: #7a031f;
+$light-primary: #A5354F;
+$white: #ffffff;
+$pain-gray: #F8F8F8;
+$light-gray: #f2f2f2;
+$gray: #666;
+$dark-gray: #585858;
+$black: #363434;
+
+
+// font
+$font-family-base: 'Noto Sans', sans-serif;
+$font-size-base: 10px;
+$line-height-base: 1.5;
+
+// spacing
+$space-unit : 4px;
+
+
+// breakpoints
+
+
+@mixin pc {//3l
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+
+@mixin notebook { //2l
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin pad { //xl
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin mobile-lg { //lg
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile-md { //md
+  @media (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin mobile-sm {//sm
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+
+
+@mixin mobile-xs { //xs
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
+$container-s-unit: 100px;
+$container-s-unit-2l: 60px;
+$container-s-unit-xl: 40px;
+

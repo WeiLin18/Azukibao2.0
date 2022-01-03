@@ -1,0 +1,210 @@
+/* ----------------------------------------font size */
+h1,
+.h1 {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: .1rem;
+    color: $primary;
+    @include notebook {
+        font-size: 3.2rem; 
+    }
+
+    @include pad {
+        font-size: 2.8rem; 
+    }
+
+    @include mobile-xs {
+        font-size: 2.4rem; 
+    }
+
+
+}
+
+h2,
+.h2 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    line-height: 2;
+
+
+
+    @include pad {
+        font-size: 2.4rem; 
+    }
+    // @include pad-992 {
+    //     font-size: 2rem; //32px
+    // }
+
+    // @include mobile-576 {
+    //     font-size: 1.5rem; //24px
+    // }
+}
+
+h3,
+.h3 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 2;
+
+    @include pad {
+        font-size: 2.0rem; 
+    }
+    // @include pad-992 {
+    //     font-size: 1.25rem; //20px
+    // }
+
+    // @include mobile-576 {
+    //     font-size: 1rem; //16px
+    // }
+}
+
+h4,
+.h4 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: .1rem;
+    // @include pad {
+    //     font-size: 1.6rem; 
+    // }
+    // @include mobile-xs {
+    //     font-size: 1.6rem; //20px
+    // }
+}
+
+h5,
+.h5 {
+    font-size: 1.6rem;
+    line-height: 2;
+    font-weight: 400;
+
+    // @include pad-992 {
+    //     font-size: 1rem; //16px
+    // }
+}
+
+h6,
+.h6 {
+    font-size: 1.4rem;
+    line-height: 2;
+    font-weight: 400;
+}
+
+@include notebook {
+    .font-2l-h2 {
+        font-size: 2.8rem;
+    }
+
+    .font-2l-h5{
+        font-size: 1.6rem;
+    }
+}
+
+@include pad{
+    .font-xl-h3{
+        font-size: 2.4rem;
+    }
+    .font-xl-h5{
+        font-size: 1.6rem;
+    }
+    .font-xl-h6{
+        font-size: 1.4rem;
+    }
+}
+
+@include mobile-lg{
+    .font-lg-h4{
+        font-size: 2rem;
+    }
+
+    .font-lg-h6{
+        font-size: 1.4rem;
+    }
+}
+
+@include mobile-sm{
+    .font-sm-h5{
+        font-size: 1.6rem;
+    }
+}
+
+@include mobile-xs{
+    .font-xs-h5{
+        font-size: 1.6rem;
+    }
+    .font-xs-h6{
+        font-size: 1.4rem;
+    }
+}
+
+
+/*----------------------------------------line-height */
+
+// .lh {
+//     &-1 {
+//         line-height: 1;
+//     }
+// }
+
+/*----------------------------------------text color */
+.text {
+    &-primary {
+        color: $primary;
+    }
+
+    &-white {
+        color: $white;
+    }
+
+    &-dark-gray {
+        color: $dark-gray;
+    }
+
+    &-black {
+        color: $black;
+    }
+}
+
+
+/* ----------------------------------------font style */
+
+// .uppercase {
+//     text-transform: uppercase;
+// }
+
+/* ----------------------------------------font weight */
+.font {
+    &-normal {
+        font-weight: 400;
+    }
+}
+
+//     &-medium {
+//         font-weight: 500;
+//     }
+
+//     &-bold {
+//         font-weight: bold;
+//     }
+
+//     &-black {
+//         font-weight: 900;
+//     }
+// }
+
+/*----------------------------------------text align */
+
+.text {
+    &-left {
+        text-align: left;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    // &-right {
+    //     text-align: right;
+    // }
+}

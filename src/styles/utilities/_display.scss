@@ -1,0 +1,168 @@
+.d {
+    &-block {
+        display: block;
+    }
+
+    &-flex {
+        display: flex;
+    }
+
+    &-inbl {
+        display: inline-block;
+    }
+}
+
+.po {
+    &-re {
+        position: relative;
+    }
+
+    &-ab {
+        position: absolute;
+    }
+}
+
+.block-center {
+    margin: 0 auto;
+}
+
+.flex {
+    &-wrap {
+        flex-wrap: wrap;
+    }
+
+    &-reverse {
+        flex-direction: row-reverse;
+    }
+
+    &-column {
+        flex-direction: column;
+    }
+
+}
+
+.justify-content {
+    &-center {
+        justify-content: center;
+    }
+
+    &-between {
+        justify-content: space-between;
+    }
+
+    // &-around {
+    //     justify-content: space-around;
+    // }
+
+    // &-end {
+    //     justify-content: flex-end;
+    // }
+}
+
+.align-items {
+    &-center {
+        align-items: center;
+    }
+
+    &-start {
+        align-items: flex-start;
+    }
+
+    // &-end {
+    //     align-items: flex-end;
+    // }
+}
+
+.align-self {
+    &-end {
+        align-self: flex-end;
+    }
+}
+
+
+// @include pad {
+//     // .d-md-none {
+//     //     display: none;
+//     // }
+
+//     // .d-md-flex {
+//     //     display: flex;
+//     // }
+
+//     .flex-md {
+//         &-wrap {
+//             flex-wrap: wrap;
+//         }
+
+//         &-row {
+//             flex-direction: row;
+//         }
+
+//         &-column {
+//             flex-direction: column;
+//         }
+//     }
+// }
+
+@include mobile-lg {
+    .order-lg-1 {
+        order: -1;
+    }
+
+    .flex-lg- {
+        &column {
+            flex-direction: column;
+        }
+
+        // &wrap {
+        //     flex-wrap: wrap;
+        // }
+    }
+
+
+
+    .align-items-lg-stretch {
+        align-items: stretch;
+    }
+    .align-items-lg-start {
+        align-items: flex-start;
+    }
+    .d-lg-none{
+        display: none;
+    }
+}
+
+@include mobile-md {
+    .order-md-1 {
+        order: -1;
+    }
+}
+
+@include mobile-sm {
+    .flex-sm-column {
+        flex-direction: column;
+    }
+    .order-sm-1 {
+        order: -1;
+    }
+    .block-sm-center{
+        margin: 0 auto;
+    }
+}
+
+.pattern-right {
+    &:after {
+        @include pattern(39px);
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+}
+
+@include pad {
+    .pattern-right {
+        &:after {
+            width: 0;
+        }
+    }
+}
