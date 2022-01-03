@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import brandImg1 from 'assets/images/brand-pic1.png';
 import brandImg2 from 'assets/images/brand-pic2.png';
-import '../../style/plugin/aos.css';
+import '../../styles/plugin/aos.css';
 
 // const StyledBrandHeroHeader = styled.header`
 

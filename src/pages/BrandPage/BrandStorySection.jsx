@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
-import '../../style/plugin/aos.css';
+import '../../styles/plugin/aos.css';
 import storyFirstImg from 'assets/images/brand-pic3-1.png';
 import storySecondImg from 'assets/images/brand-pic3-2.png';
 import storyThirdImg from 'assets/images/brand-pic3-3.png';

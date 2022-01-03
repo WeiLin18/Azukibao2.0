@@ -8,7 +8,7 @@ import IGImg7 from 'assets/images/ig7.png';
 import IGImg8 from 'assets/images/ig8.png';
 import { useIGPostList } from '../../hooks/useIGPostList';
 import AOS from 'aos';
-import '../../style/plugin/aos.css';
+import '../../styles/plugin/aos.css';
 
 const defaultIGItems = [
   {

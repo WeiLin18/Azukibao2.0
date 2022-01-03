@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import ProductApp from './ProductApp';
+import ProductApp from './pages/ProductPage';
 import HomePage from './pages/HomePage';
 import BrandPage from './pages/BrandPage';
 import MaterialPage from './pages/MaterialPage';
@@ -17,7 +17,7 @@ import ShopPage from './pages/ShopPage';
 import EmptyPage from './pages/EmptyPage';
 import InstagramFooter from './components/layout/InstagramFooter';
 import { ProductProvider } from './components/product/ProductContext';
-import './style/all.scss';
+import './styles/all.scss';
 
 // reach router
 function _ScrollToTop(props) {

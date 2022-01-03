@@ -13,7 +13,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/effect-fade/effect-fade.scss';
 import 'swiper/swiper.scss';
-import '../../style/plugin/swiper-bundle.scss';
+import '../../styles/plugin/swiper-bundle.scss';
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay]);
 const MaterialSection = (props) => {

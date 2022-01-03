@@ -6,7 +6,7 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/effect-fade/effect-fade.scss';
 import 'swiper/swiper.scss';
-// import '..assets/style/plugin/swiper-bundle.scss';
+// import '..assets/styles/plugin/swiper-bundle.scss';
 import popImg1 from 'assets/images/popular-1.png';
 import popImg2 from 'assets/images/popular-2.png';
 import popImg3 from 'assets/images/popular-3.png';
