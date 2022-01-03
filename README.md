@@ -116,6 +116,6 @@ https://azukibao.netlify.app/
 
 ### Author
 
-- UX / UI Design: [Wei Lin](https://2021.thef2e.com/users/6296427084285739362)
+- UX / UI Design: [Wei Lin](https://github.com/WeiLin18)
 - Web development: [Wei Lin](https://github.com/WeiLin18)
 - Product Photography: [Wei Lin](https://github.com/WeiLin18)
