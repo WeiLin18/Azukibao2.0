@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# Azukibao
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This site is developed by [React.js](https://reactjs.org/), integrated third-party API from [Airtable](https://airtable.com/api) and [Instagram](https://developers.facebook.com/docs/instagram-api/).
 
-## Available Scripts
+### Description:
 
-In the project directory, you can run:
+This is a Chinese bun branded website using Airtable as CMS. Client can easily manage products on online excel without any programming skills. In addition, by fetching Instagram API, instagram posts from official account will also update synchronously.
 
-### `npm start`
+### Demo link:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+https://azukibao.netlify.app/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Screenshots
 
-### `npm test`
+![index](./docs/index.png)
+![material](./docs/material.png)
+![modal](./docs/modal.png)
+![airtable](./docs/airtable.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Resource
 
-### `npm run build`
+- [Mockup](https://xd.adobe.com/view/4a8d6a5f-8cde-44c6-9019-3c3089f40534-1fde/grid)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Base:
+  - HTML / CSS / SCSS / JavaScript
+- Framework:
+  - [React.js](https://reactjs.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Dependencies
 
-### `npm run eject`
+- [styled-components](https://styled-components.com/)
+- [axios](https://github.com/axios/axios)
+- [aos](https://michalsnik.github.io/aos/)
+- [swiper](https://swiperjs.com/)
+- [node-sass](https://www.npmjs.com/package/node-sass)
+- ... ( see `package.json` for details )
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Folder structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+    .
+    ├── docs                         # documentation files
+    ├── public                       # static files, like images, etc..
+    ├── src
+    │    ├── assets                  # media assets, like icons, etc..
+    │    ├── components              # global components
+    │    ├── hooks                   # utility hooks for encapsulating logic
+    │    ├── pages
+    │    │   ├── BrandPage
+    │    │   │   ├── BrandHeroHeader.jsx
+    │    │   │   ├── BrandStorySection.jsx
+    │    │   │   └── index.jsx
+    │    │   ├── HomePage
+    │    │   │   └── ...
+    │    │   ├── PopularPage
+    │    │   │   └── ...
+    │    │   ├── ShopPage
+    │    │   │   └── ...
+    │    │   ├── EmptyPage.jsx
+    │    │   ├── MaterialPage.jsx
+    │    │   └── ProductPage.jsx
+    │    ├── styles                   # global styles (using BEM naming)
+    │    ├── App.jsx                  # main components as App container
+    │    ├── index.js                 # root entry point
+    │    └── utils.js                 # tools and utilities
+    ├── .gititnore
+    ├── .jsconfig.json
+    ├── package-lock.json
+    ├── package.json
+    └── README.md
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Style Folder structure
 
-## Learn More
+```
+    styles
+      ├── base
+      │   ├── _base.scss
+      │   ├── _reset.scss
+      ├── components
+      │   ├── _banner.scss
+      │   └── ...
+      ├── helpers
+      │   ├── _variables.scss
+      │   └── ...
+      ├── layout
+      │   ├── _footer.scss
+      │   └── ...
+      ├── plugin
+      │   ├── aos.css
+      │   └── swiper-bundle.scss
+      ├── utilities
+      │   ├── _spacing.scss
+      │   └── ...
+      └── all.scss                    # root style file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Setup
 
-### Code Splitting
+- Download or clone the repository
+- Install dependencies
+  ```bash
+  npm install
+  ```
+- Run the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```bash
+  npm run start
+  ```
 
-### Analyzing the Bundle Size
+- Open [http://localhost:3000](http://localhost:3000) with your browser to see the homePage.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- UX / UI Design: [Wei Lin](https://2021.thef2e.com/users/6296427084285739362)
+- Web development: [Wei Lin](https://github.com/WeiLin18)
+- Product Photography: [Wei Lin](https://github.com/WeiLin18)
